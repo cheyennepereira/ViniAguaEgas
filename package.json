@@ -1,0 +1,29 @@
+{
+  "name": "vini-agua-gas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo Vini Água e Gás - app mobile, painel admin, API e pacotes compartilhados",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @vini/api\" \"npm run dev -w @vini/admin\" \"npm run dev -w @vini/mobile\"",
+    "dev:api": "npm run dev -w @vini/api",
+    "dev:admin": "npm run dev -w @vini/admin",
+    "dev:mobile": "npm run dev -w @vini/mobile",
+    "build": "npm run build -ws",
+    "typecheck": "npm run typecheck -ws --if-present",
+    "db:migrate": "npm run db:migrate -w @vini/api",
+    "db:seed": "npm run db:seed -w @vini/api",
+    "db:generate": "npm run db:generate -w @vini/api"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}
