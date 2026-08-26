@@ -7,6 +7,7 @@ Complete business solution for **Vini Água e Gás**, a water and gas cylinder d
 - **Customer mobile app** (Android, via Google Play) — browse products (water gallons, gas cylinders), place orders, select delivery address with Google Maps, track order status, and manage loyalty points.
 - **Admin panel** (web) — manage products, inventory, suppliers, orders (confirm → deliver), payments, daily cash reconciliation, and the loyalty program.
 - **Backend API** — the single source of truth for auth, orders, inventory, payments, and loyalty, shared by both clients.
+- **WhatsApp Terminal** (local Windows app) — receives orders from any WhatsApp number paired via QR code and prints them on the thermal printer.
 - **Shared package** — Zod schemas and TypeScript types reused across API, admin, and mobile.
 
 See the full [Architecture Plan](docs/architecture.md) for tech stack decisions, database schema, API design, authentication flow, Google Maps integration, and Play Store deployment steps.
@@ -18,11 +19,13 @@ vini-agua-gas/
 ├── apps/
 │   ├── mobile/     # Expo React Native app (customer-facing, Android/Play Store)
 │   ├── admin/      # React + Vite admin panel
-│   └── api/        # Node.js + Express + Prisma backend
+│   ├── api/        # Node.js + Express + Prisma backend
+│   └── terminal/   # Node.js + Electron local app: WhatsApp Web + thermal printer
 ├── packages/
 │   └── shared/     # Shared TypeScript types, Zod schemas, constants
 └── docs/
-    └── architecture.md
+    ├── architecture.md
+    └── whatsapp-printer-integration.md
 ```
 
 ## Tech stack
@@ -36,6 +39,8 @@ vini-agua-gas/
 | Auth | JWT (access + refresh tokens) |
 | Validation | Zod |
 | Maps | Google Maps Platform (Places, Geocoding) |
+| WhatsApp terminal | Node.js + Electron + `whatsapp-web.js` |
+| Thermal printing | `node-thermal-printer` (ESC/POS) |
 
 ## Requirements
 
@@ -176,6 +181,7 @@ The auth module is available under `/api/v1/auth`:
 ## Documentation
 
 - [Architecture Plan](docs/architecture.md) — tech stack, database schema, API endpoints, project structure, authentication flow, Google Maps integration, Play Store deployment, and environment/DevOps setup.
+- [WhatsApp + Printer Integration](docs/whatsapp-printer-integration.md) — how the local terminal receives WhatsApp orders and prints receipts.
 
 ## License
 
