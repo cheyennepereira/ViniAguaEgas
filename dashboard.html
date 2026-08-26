@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-item active"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></div>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <a class="nav-item" href="suppliers.html"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></a>
+      <a class="nav-item" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Dashboard</div>
+        <div class="topbar-subtitle">Visão geral de hoje, terça-feira, 12 de março de 2024</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="alert alert-warning">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <div><strong>Atenção:</strong> 3 produtos estão com estoque baixo. <a href="inventory.html" style="color:#8a5a00; text-decoration:underline; font-weight:700;">Ver estoque</a></div>
+      </div>
+
+      <div class="grid grid-4" style="margin-bottom:22px;">
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Pedidos Hoje</span>
+            <div class="kpi-icon blue"><i class="fa-solid fa-clipboard-list"></i></div>
+          </div>
+          <div class="kpi-value">48</div>
+          <div class="kpi-trend up"><i class="fa-solid fa-arrow-up"></i> 12% <span class="muted">vs. ontem</span></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Faturamento Hoje</span>
+            <div class="kpi-icon green"><i class="fa-solid fa-sack-dollar"></i></div>
+          </div>
+          <div class="kpi-value">R$ 3.842,00</div>
+          <div class="kpi-breakdown">
+            <div class="kpi-breakdown-row">
+              <span class="label"><span class="dot" style="background:#4CAF50;"></span>Pix</span>
+              <span class="value">R$ 1.920,00</span>
+            </div>
+            <div class="kpi-breakdown-row">
+              <span class="label"><span class="dot" style="background:#1A3A6B;"></span>Cartão</span>
+              <span class="value">R$ 1.402,00</span>
+            </div>
+            <div class="kpi-breakdown-row">
+              <span class="label"><span class="dot" style="background:#F5A623;"></span>Dinheiro</span>
+              <span class="value">R$ 520,00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Pedidos Pendentes</span>
+            <div class="kpi-icon yellow"><i class="fa-solid fa-clock"></i></div>
+          </div>
+          <div class="kpi-value">7</div>
+          <div class="kpi-trend"><span class="muted">Aguardando confirmação ou envio</span></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Estoque Baixo</span>
+            <div class="kpi-icon red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          </div>
+          <div class="kpi-value">3</div>
+          <div class="kpi-trend down"><i class="fa-solid fa-arrow-down"></i> itens abaixo do mínimo</div>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 2fr 1fr; margin-bottom:22px;">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Vendas dos Últimos 7 Dias</h3>
+              <p>Faturamento diário em Reais (R$)</p>
+            </div>
+            <div class="dropdown-filter"><i class="fa-regular fa-calendar"></i> Últimos 7 dias <i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="card-body">
+            <div class="chart-placeholder">
+              <div class="chart-bar-group"><div class="chart-bar-value">R$2.1k</div><div class="chart-bar" style="height:55%;"></div><div class="chart-bar-label">06/03</div></div>
+              <div class="chart-bar-group"><div class="chart-bar-value">R$2.8k</div><div class="chart-bar" style="height:70%;"></div><div class="chart-bar-label">07/03</div></div>
+              <div class="chart-bar-group"><div class="chart-bar-value">R$1.9k</div><div class="chart-bar" style="height:48%;"></div><div class="chart-bar-label">08/03</div></div>
+              <div class="chart-bar-group"><div class="chart-bar-value">R$3.4k</div><div class="chart-bar" style="height:86%;"></div><div class="chart-bar-label">09/03</div></div>
+              <div class="chart-bar-group"><div class="chart-bar-value">R$2.6k</div><div class="chart-bar" style="height:65%;"></div><div class="chart-bar-label">10/03</div></div>
+              <div class="chart-bar-group"><div class="chart-bar-value">R$3.1k</div><div class="chart-bar" style="height:78%;"></div><div class="chart-bar-label">11/03</div></div>
+              <div class="chart-bar-group"><div class="chart-bar-value">R$3.8k</div><div class="chart-bar accent" style="height:96%;"></div><div class="chart-bar-label">12/03</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Alertas de Estoque Baixo</h3>
+              <p>Produtos abaixo do mínimo</p>
+            </div>
+          </div>
+          <div class="card-body" style="display:flex; flex-direction:column; gap:14px;">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-12">
+                <div class="kpi-icon red" style="width:36px;height:36px;font-size:14px;"><i class="fa-solid fa-bottle-water"></i></div>
+                <div>
+                  <div style="font-weight:700; font-size:13px;">Água Mineral 20L</div>
+                  <div style="font-size:11.5px; color:var(--color-text-muted);">8 unidades restantes</div>
+                </div>
+              </div>
+              <span class="badge badge-red">Crítico</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-12">
+                <div class="kpi-icon yellow" style="width:36px;height:36px;font-size:14px;"><i class="fa-solid fa-fire-flame-simple"></i></div>
+                <div>
+                  <div style="font-weight:700; font-size:13px;">Botijão de Gás P13</div>
+                  <div style="font-size:11.5px; color:var(--color-text-muted);">15 unidades restantes</div>
+                </div>
+              </div>
+              <span class="badge badge-yellow">Baixo</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-12">
+                <div class="kpi-icon red" style="width:36px;height:36px;font-size:14px;"><i class="fa-solid fa-bottle-water"></i></div>
+                <div>
+                  <div style="font-weight:700; font-size:13px;">Água Mineral 10L</div>
+                  <div style="font-size:11.5px; color:var(--color-text-muted);">5 unidades restantes</div>
+                </div>
+              </div>
+              <span class="badge badge-red">Crítico</span>
+            </div>
+            <a href="inventory.html" class="btn btn-outline btn-block btn-sm" style="margin-top:6px;">Ver estoque completo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 1.4fr 1fr;">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Pedidos Recentes</h3>
+              <p>Últimos pedidos recebidos</p>
+            </div>
+            <a href="orders.html" class="btn btn-ghost btn-sm">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>#</th><th>Cliente</th><th>Itens</th><th>Total</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td class="cell-strong">#1042</td>
+                  <td>Maria Aparecida Souza</td>
+                  <td class="cell-muted">2x Água 20L</td>
+                  <td class="cell-strong">R$ 84,00</td>
+                  <td><span class="badge badge-yellow"><i class="fa-solid fa-circle"></i>Pendente</span></td>
+                </tr>
+                <tr>
+                  <td class="cell-strong">#1041</td>
+                  <td>João Pedro Lima</td>
+                  <td class="cell-muted">1x Gás P13</td>
+                  <td class="cell-strong">R$ 110,00</td>
+                  <td><span class="badge badge-blue"><i class="fa-solid fa-circle"></i>Em Rota</span></td>
+                </tr>
+                <tr>
+                  <td class="cell-strong">#1040</td>
+                  <td>Ana Carolina Ferreira</td>
+                  <td class="cell-muted">3x Água 10L</td>
+                  <td class="cell-strong">R$ 96,00</td>
+                  <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Entregue</span></td>
+                </tr>
+                <tr>
+                  <td class="cell-strong">#1039</td>
+                  <td>Carlos Eduardo Santos</td>
+                  <td class="cell-muted">1x Gás P45</td>
+                  <td class="cell-strong">R$ 280,00</td>
+                  <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Entregue</span></td>
+                </tr>
+                <tr>
+                  <td class="cell-strong">#1038</td>
+                  <td>Fernanda Oliveira</td>
+                  <td class="cell-muted">2x Água 20L, 1x Gás P13</td>
+                  <td class="cell-strong">R$ 194,00</td>
+                  <td><span class="badge badge-red"><i class="fa-solid fa-circle"></i>Cancelado</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Formas de Pagamento</h3>
+              <p>Distribuição do dia</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="donut-chart" style="background: conic-gradient(#4CAF50 0% 50%, #1A3A6B 50% 86%, #F5A623 86% 100%);">
+              <div class="donut-center" style="background:#fff; width:120px; height:120px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+                <div class="val">R$ 3.842</div>
+                <div class="lbl">Total hoje</div>
+              </div>
+            </div>
+            <div class="legend-list" style="margin-top:24px;">
+              <div class="legend-item"><span class="dot" style="background:#4CAF50;"></span><span class="name">Pix</span><span class="val">50%</span></div>
+              <div class="legend-item"><span class="dot" style="background:#1A3A6B;"></span><span class="name">Cartão</span><span class="val">36%</span></div>
+              <div class="legend-item"><span class="dot" style="background:#F5A623;"></span><span class="name">Dinheiro</span><span class="val">14%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Maria Aparecida Souza • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <a class="nav-item" href="suppliers.html"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></a>
+      <a class="nav-item active" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Clientes</div>
+        <div class="topbar-subtitle">Visão geral de hoje, terça-feira, 12 de março de 2024</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="breadcrumb"><a href="customers.html">Clientes</a> / Maria Aparecida Souza</div>
+
+      <div class="page-header">
+        <div class="flex items-center gap-12">
+          <div class="avatar-lg">MA</div>
+          <div>
+            <div class="flex items-center gap-8">
+              <h1 style="margin:0;">Maria Aparecida Souza</h1>
+              <span class="badge badge-purple"><i class="fa-solid fa-heart"></i>Cliente Fiel</span>
+            </div>
+            <p>Cliente desde Janeiro de 2023</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-12">
+          <button class="btn btn-outline"><i class="fa-solid fa-pen"></i>Editar</button>
+          <button class="btn btn-primary"><i class="fa-solid fa-plus"></i>Novo Pedido</button>
+        </div>
+      </div>
+
+      <div class="grid grid-4" style="margin-bottom:22px;">
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Total de Pedidos</span>
+            <div class="kpi-icon blue"><i class="fa-solid fa-clipboard-list"></i></div>
+          </div>
+          <div class="kpi-value">42</div>
+          <div class="kpi-trend"><span class="muted">Desde o cadastro</span></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Total Gasto</span>
+            <div class="kpi-icon green"><i class="fa-solid fa-sack-dollar"></i></div>
+          </div>
+          <div class="kpi-value">R$ 3.680,00</div>
+          <div class="kpi-trend"><span class="muted">Acumulado</span></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Ticket Médio</span>
+            <div class="kpi-icon yellow"><i class="fa-solid fa-receipt"></i></div>
+          </div>
+          <div class="kpi-value">R$ 87,60</div>
+          <div class="kpi-trend"><span class="muted">Por pedido</span></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Pontos de Fidelidade Atuais</span>
+            <div class="kpi-icon red"><i class="fa-solid fa-star"></i></div>
+          </div>
+          <div class="kpi-value">860</div>
+          <div class="kpi-trend"><span class="muted">Disponíveis para resgate</span></div>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 2fr 1fr;">
+        <div style="display:flex; flex-direction:column; gap:22px;">
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Histórico de Pedidos</h3>
+                <p>Últimos pedidos realizados pela cliente</p>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>#</th><th>Data</th><th>Itens</th><th>Total</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="cell-strong">#1042</td>
+                    <td>11/03/2024</td>
+                    <td class="cell-muted">2x Água 20L</td>
+                    <td class="cell-strong">R$ 84,00</td>
+                    <td><span class="badge badge-yellow"><i class="fa-solid fa-circle"></i>Pendente</span></td>
+                  </tr>
+                  <tr>
+                    <td class="cell-strong">#1028</td>
+                    <td>02/03/2024</td>
+                    <td class="cell-muted">1x Gás P13, 1x Água 10L</td>
+                    <td class="cell-strong">R$ 142,00</td>
+                    <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Entregue</span></td>
+                  </tr>
+                  <tr>
+                    <td class="cell-strong">#1004</td>
+                    <td>18/02/2024</td>
+                    <td class="cell-muted">3x Água 20L</td>
+                    <td class="cell-strong">R$ 126,00</td>
+                    <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Entregue</span></td>
+                  </tr>
+                  <tr>
+                    <td class="cell-strong">#0981</td>
+                    <td>29/01/2024</td>
+                    <td class="cell-muted">1x Gás P13</td>
+                    <td class="cell-strong">R$ 110,00</td>
+                    <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Entregue</span></td>
+                  </tr>
+                  <tr>
+                    <td class="cell-strong">#0954</td>
+                    <td>07/01/2024</td>
+                    <td class="cell-muted">2x Água 10L, 1x Gás P13</td>
+                    <td class="cell-strong">R$ 174,00</td>
+                    <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Entregue</span></td>
+                  </tr>
+                  <tr>
+                    <td class="cell-strong">#0921</td>
+                    <td>15/12/2023</td>
+                    <td class="cell-muted">1x Água 20L</td>
+                    <td class="cell-strong">R$ 42,00</td>
+                    <td><span class="badge badge-red"><i class="fa-solid fa-circle"></i>Cancelado</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Endereços Cadastrados</h3>
+                <p>Locais de entrega da cliente</p>
+              </div>
+            </div>
+            <div class="card-body" style="display:flex; flex-direction:column; gap:14px;">
+              <div class="flex items-center justify-between" style="border:1px solid var(--color-border); border-radius:var(--radius); padding:14px 16px;">
+                <div class="flex items-center gap-12">
+                  <div class="kpi-icon blue" style="width:36px; height:36px; font-size:14px;"><i class="fa-solid fa-location-dot"></i></div>
+                  <div>
+                    <div style="font-weight:700; font-size:13px;">Casa</div>
+                    <div style="font-size:12.5px; color:var(--color-text-muted);">Rua das Palmeiras, 245, Apto 32 — Jardim das Flores, São Paulo - SP, CEP 04567-000</div>
+                  </div>
+                </div>
+                <span class="badge badge-blue">Padrão</span>
+              </div>
+              <div class="flex items-center justify-between" style="border:1px solid var(--color-border); border-radius:var(--radius); padding:14px 16px;">
+                <div class="flex items-center gap-12">
+                  <div class="kpi-icon blue" style="width:36px; height:36px; font-size:14px;"><i class="fa-solid fa-location-dot"></i></div>
+                  <div>
+                    <div style="font-weight:700; font-size:13px;">Trabalho</div>
+                    <div style="font-size:12.5px; color:var(--color-text-muted);">Avenida Paulista, 1578, Sala 902 — Bela Vista, São Paulo - SP, CEP 01310-200</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:22px;">
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Dados Pessoais</h3>
+              </div>
+            </div>
+            <div class="card-body" style="display:flex; flex-direction:column; gap:14px;">
+              <div>
+                <div style="font-size:12px; color:var(--color-text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:4px;">Nome Completo</div>
+                <div style="font-size:13.5px; font-weight:600;">Maria Aparecida Souza</div>
+              </div>
+              <div>
+                <div style="font-size:12px; color:var(--color-text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:4px;">CPF</div>
+                <div style="font-size:13.5px; font-weight:600;">324.678.912-05</div>
+              </div>
+              <div>
+                <div style="font-size:12px; color:var(--color-text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:4px;">Telefone</div>
+                <div style="font-size:13.5px; font-weight:600;">(11) 98765-4321</div>
+              </div>
+              <div>
+                <div style="font-size:12px; color:var(--color-text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:4px;">E-mail</div>
+                <div style="font-size:13.5px; font-weight:600;">maria.souza@email.com</div>
+              </div>
+              <div>
+                <div style="font-size:12px; color:var(--color-text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:4px;">Data de Nascimento</div>
+                <div style="font-size:13.5px; font-weight:600;">14/05/1985</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Transações de Fidelidade</h3>
+                <p>Histórico de pontos ganhos e resgatados</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="timeline">
+                <div class="timeline-item done">
+                  <div class="timeline-icon"><i class="fa-solid fa-plus"></i></div>
+                  <div class="timeline-content">
+                    <div class="timeline-title" style="color:var(--color-success);">+15 pontos — Pedido #1042</div>
+                    <div class="timeline-time">11/03/2024</div>
+                  </div>
+                </div>
+                <div class="timeline-item done">
+                  <div class="timeline-icon" style="background:var(--color-danger);"><i class="fa-solid fa-minus"></i></div>
+                  <div class="timeline-content">
+                    <div class="timeline-title" style="color:var(--color-danger);">-100 pontos — Resgate: Desconto R$ 10,00</div>
+                    <div class="timeline-time">04/03/2024</div>
+                  </div>
+                </div>
+                <div class="timeline-item done">
+                  <div class="timeline-icon"><i class="fa-solid fa-plus"></i></div>
+                  <div class="timeline-content">
+                    <div class="timeline-title" style="color:var(--color-success);">+22 pontos — Pedido #1028</div>
+                    <div class="timeline-time">02/03/2024</div>
+                  </div>
+                </div>
+                <div class="timeline-item done">
+                  <div class="timeline-icon"><i class="fa-solid fa-plus"></i></div>
+                  <div class="timeline-content">
+                    <div class="timeline-title" style="color:var(--color-success);">+18 pontos — Pedido #1004</div>
+                    <div class="timeline-time">18/02/2024</div>
+                  </div>
+                </div>
+                <div class="timeline-item done">
+                  <div class="timeline-icon" style="background:var(--color-danger);"><i class="fa-solid fa-minus"></i></div>
+                  <div class="timeline-content">
+                    <div class="timeline-title" style="color:var(--color-danger);">-200 pontos — Resgate: Botijão de Gás Grátis</div>
+                    <div class="timeline-time">30/01/2024</div>
+                  </div>
+                </div>
+                <div class="timeline-item done">
+                  <div class="timeline-icon"><i class="fa-solid fa-plus"></i></div>
+                  <div class="timeline-content">
+                    <div class="timeline-title" style="color:var(--color-success);">+16 pontos — Pedido #0981</div>
+                    <div class="timeline-time">29/01/2024</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

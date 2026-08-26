@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Configurações de Fidelidade • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <a class="nav-item" href="suppliers.html"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></a>
+      <a class="nav-item" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item active" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Configurações de Fidelidade</div>
+        <div class="topbar-subtitle">Visão geral de hoje, terça-feira, 12 de março de 2024</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-header">
+        <div>
+          <div class="breadcrumb"><a href="dashboard.html">Painel</a> / Financeiro / Fidelidade</div>
+          <h1>Configurações de Fidelidade</h1>
+          <p>Configure as regras do programa de pontos</p>
+        </div>
+        <button class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Salvar Alterações</button>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 2fr 1fr; align-items:start;">
+        <div style="display:flex; flex-direction:column; gap:20px;">
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Status do Programa</h3>
+                <p>Ative ou desative o programa de fidelidade para todos os clientes</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-12">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                  <div>
+                    <div style="font-weight:700; font-size:14px;">Programa de Fidelidade Ativo</div>
+                    <div style="font-size:12.5px; color:var(--color-text-muted); margin-top:2px;">Quando ativo, os clientes acumulam pontos automaticamente a cada pedido concluído e podem resgatá-los por descontos.</div>
+                  </div>
+                </div>
+                <span class="badge badge-green"><i class="fa-solid fa-circle"></i>Ativo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Regras de Acúmulo de Pontos</h3>
+                <p>Defina quantos pontos o cliente ganha por real gasto</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group" style="max-width:320px;">
+                <label class="form-label">Pontos por Real Gasto</label>
+                <input type="number" class="form-control" value="1" min="0" step="1">
+                <div class="form-hint">Quantidade de pontos concedidos para cada R$ 1,00 gasto em um pedido.</div>
+              </div>
+              <div class="alert alert-info" style="margin-bottom:0;">
+                <i class="fa-solid fa-circle-info"></i>
+                <div><strong>Exemplo:</strong> Um pedido de R$ 100,00 gera <strong>100 pontos</strong> para o cliente.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Regras de Resgate</h3>
+                <p>Defina como os pontos acumulados podem ser trocados por desconto</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Pontos Mínimos para Resgate</label>
+                  <input type="number" class="form-control" value="100" min="0" step="10">
+                  <div class="form-hint">Quantidade mínima de pontos acumulados para permitir o resgate.</div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Valor de Desconto por Resgate</label>
+                  <div class="input-prefix">
+                    <span>R$</span>
+                    <input type="text" class="form-control" value="10,00">
+                  </div>
+                  <div class="form-hint">Valor de desconto concedido a cada 100 pontos resgatados.</div>
+                </div>
+              </div>
+              <div class="alert alert-info" style="margin-bottom:0;">
+                <i class="fa-solid fa-circle-info"></i>
+                <div><strong>Exemplo:</strong> A cada <strong>100 pontos</strong> acumulados, o cliente pode resgatar <strong>R$ 10,00</strong> de desconto em um novo pedido.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Validade dos Pontos</h3>
+                <p>Configure o tempo de expiração dos pontos acumulados</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group" style="max-width:420px;">
+                <label class="form-label">Pontos expiram após</label>
+                <div class="form-row" style="grid-template-columns: 1fr 1.4fr; gap:12px;">
+                  <input type="number" class="form-control" value="12" min="1" step="1">
+                  <select class="form-control">
+                    <option value="dias">Dias</option>
+                    <option value="meses" selected>Meses</option>
+                    <option value="anos">Anos</option>
+                  </select>
+                </div>
+                <div class="form-hint">Após esse período sem uso, os pontos acumulados são zerados automaticamente.</div>
+              </div>
+              <hr class="divider">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-12">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                  <div>
+                    <div style="font-weight:700; font-size:14px;">Notificar cliente antes da expiração</div>
+                    <div style="font-size:12.5px; color:var(--color-text-muted); margin-top:2px;">Envia um aviso automático ao cliente 15 dias antes de seus pontos expirarem.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card" style="position:sticky; top:96px;">
+          <div class="card-header">
+            <div>
+              <h3>Resumo do Programa Atual</h3>
+              <p>Regras ativas em produção</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="summary-list">
+              <div class="summary-list-item">
+                <div class="summary-list-icon"><i class="fa-solid fa-toggle-on"></i></div>
+                <div class="summary-list-text">
+                  <div class="lbl">Status</div>
+                  <div class="val">Programa Ativo</div>
+                </div>
+              </div>
+              <div class="summary-list-item">
+                <div class="summary-list-icon"><i class="fa-solid fa-coins"></i></div>
+                <div class="summary-list-text">
+                  <div class="lbl">Acúmulo</div>
+                  <div class="val">1 ponto a cada R$ 1,00 gasto</div>
+                </div>
+              </div>
+              <div class="summary-list-item">
+                <div class="summary-list-icon"><i class="fa-solid fa-gift"></i></div>
+                <div class="summary-list-text">
+                  <div class="lbl">Resgate mínimo</div>
+                  <div class="val">100 pontos</div>
+                </div>
+              </div>
+              <div class="summary-list-item">
+                <div class="summary-list-icon"><i class="fa-solid fa-tag"></i></div>
+                <div class="summary-list-text">
+                  <div class="lbl">Desconto por resgate</div>
+                  <div class="val">R$ 10,00 a cada 100 pontos</div>
+                </div>
+              </div>
+              <div class="summary-list-item">
+                <div class="summary-list-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                <div class="summary-list-text">
+                  <div class="lbl">Validade dos pontos</div>
+                  <div class="val">12 meses</div>
+                </div>
+              </div>
+              <div class="summary-list-item">
+                <div class="summary-list-icon"><i class="fa-solid fa-bell"></i></div>
+                <div class="summary-list-text">
+                  <div class="lbl">Notificação de expiração</div>
+                  <div class="val">Ativada (15 dias antes)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Fornecedores • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <div class="nav-item active"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></div>
+      <a class="nav-item" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Fornecedores</div>
+        <div class="topbar-subtitle">Gerencie os fornecedores de água e gás</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-header">
+        <div>
+          <h1>Fornecedores</h1>
+          <p>Gerencie os fornecedores de água e gás</p>
+        </div>
+        <a href="supplier-form.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Novo Fornecedor</a>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="topbar-search" style="margin-left:0; width:320px;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar por nome, CNPJ ou e-mail...">
+          </div>
+          <div class="dropdown-filter"><i class="fa-solid fa-filter"></i> Tipo: Todos <i class="fa-solid fa-chevron-down"></i></div>
+          <div style="margin-left:auto; font-size:12.5px; color:var(--color-text-muted);">7 fornecedores encontrados</div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Fornecedor</th>
+                <th>CNPJ</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+                <th>Tipo</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm" style="background:#E8EEF9; color:var(--color-primary);"><i class="fa-solid fa-bottle-water"></i></div>
+                    <span class="cell-strong">Distribuidora Águas do Vale Ltda</span>
+                  </div>
+                </td>
+                <td class="cell-muted">12.345.678/0001-90</td>
+                <td class="cell-muted">(11) 98765-4321</td>
+                <td class="cell-muted">contato@aguasdovale.com.br</td>
+                <td><span class="badge badge-blue">Água</span></td>
+                <td><span class="badge badge-green">Ativo</span></td>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <a href="supplier-form.html" title="Editar" style="color:var(--color-text-muted);"><i class="fa-solid fa-pen"></i></a>
+                    <a href="#" title="Excluir" style="color:var(--color-danger);"><i class="fa-solid fa-trash"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm" style="background:#FEF3E0; color:var(--color-accent-dark);"><i class="fa-solid fa-fire-flame-simple"></i></div>
+                    <span class="cell-strong">Gás Brasil Distribuidora</span>
+                  </div>
+                </td>
+                <td class="cell-muted">23.456.789/0001-11</td>
+                <td class="cell-muted">(11) 97654-3210</td>
+                <td class="cell-muted">vendas@gasbrasil.com.br</td>
+                <td><span class="badge badge-yellow">Gás</span></td>
+                <td><span class="badge badge-green">Ativo</span></td>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <a href="supplier-form.html" title="Editar" style="color:var(--color-text-muted);"><i class="fa-solid fa-pen"></i></a>
+                    <a href="#" title="Excluir" style="color:var(--color-danger);"><i class="fa-solid fa-trash"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm" style="background:#E8EEF9; color:var(--color-primary);"><i class="fa-solid fa-bottle-water"></i></div>
+                    <span class="cell-strong">Fonte Pura Comércio de Águas</span>
+                  </div>
+                </td>
+                <td class="cell-muted">34.567.890/0001-22</td>
+                <td class="cell-muted">(11) 96543-2109</td>
+                <td class="cell-muted">contato@fontepura.com.br</td>
+                <td><span class="badge badge-blue">Água</span></td>
+                <td><span class="badge badge-gray">Inativo</span></td>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <a href="supplier-form.html" title="Editar" style="color:var(--color-text-muted);"><i class="fa-solid fa-pen"></i></a>
+                    <a href="#" title="Excluir" style="color:var(--color-danger);"><i class="fa-solid fa-trash"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm" style="background:#FEF3E0; color:var(--color-accent-dark);"><i class="fa-solid fa-fire-flame-simple"></i></div>
+                    <span class="cell-strong">Copagaz Revenda</span>
+                  </div>
+                </td>
+                <td class="cell-muted">45.678.901/0001-33</td>
+                <td class="cell-muted">(11) 95432-1098</td>
+                <td class="cell-muted">comercial@copagaz.com.br</td>
+                <td><span class="badge badge-yellow">Gás</span></td>
+                <td><span class="badge badge-green">Ativo</span></td>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <a href="supplier-form.html" title="Editar" style="color:var(--color-text-muted);"><i class="fa-solid fa-pen"></i></a>
+                    <a href="#" title="Excluir" style="color:var(--color-danger);"><i class="fa-solid fa-trash"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm" style="background:#E8EEF9; color:var(--color-primary);"><i class="fa-solid fa-bottle-water"></i></div>
+                    <span class="cell-strong">Águas Cristalinas Ltda</span>
+                  </div>
+                </td>
+                <td class="cell-muted">56.789.012/0001-44</td>
+                <td class="cell-muted">(11) 94321-0987</td>
+                <td class="cell-muted">atendimento@aguascristalinas.com.br</td>
+                <td><span class="badge badge-blue">Água</span></td>
+                <td><span class="badge badge-green">Ativo</span></td>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <a href="supplier-form.html" title="Editar" style="color:var(--color-text-muted);"><i class="fa-solid fa-pen"></i></a>
+                    <a href="#" title="Excluir" style="color:var(--color-danger);"><i class="fa-solid fa-trash"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm" style="background:#F1E9FE; color:#7C3AED;"><i class="fa-solid fa-truck-field"></i></div>
+                    <span class="cell-strong">Liquigás Distribuidora</span>
+                  </div>
+                </td>
+                <td class="cell-muted">67.890.123/0001-55</td>
+                <td class="cell-muted">(11) 93210-9876</td>
+                <td class="cell-muted">parcerias@liquigas.com.br</td>
+                <td><span class="badge badge-purple">Ambos</span></td>
+                <td><span class="badge badge-green">Ativo</span></td>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <a href="supplier-form.html" title="Editar" style="color:var(--color-text-muted);"><i class="fa-solid fa-pen"></i></a>
+                    <a href="#" title="Excluir" style="color:var(--color-danger);"><i class="fa-solid fa-trash"></i></a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm" style="background:#E8EEF9; color:var(--color-primary);"><i class="fa-solid fa-bottle-water"></i></div>
+                    <span class="cell-strong">Minalba Distribuição SP</span>
+                  </div>
+                </td>
+                <td class="cell-muted">78.901.234/0001-66</td>
+                <td class="cell-muted">(11) 92109-8765</td>
+                <td class="cell-muted">sp@minalba.com.br</td>
+                <td><span class="badge badge-blue">Água</span></td>
+                <td><span class="badge badge-gray">Inativo</span></td>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <a href="supplier-form.html" title="Editar" style="color:var(--color-text-muted);"><i class="fa-solid fa-pen"></i></a>
+                    <a href="#" title="Excluir" style="color:var(--color-danger);"><i class="fa-solid fa-trash"></i></a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer">
+          <div>Mostrando 1–7 de 7 fornecedores</div>
+          <div class="pagination">
+            <button><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="active">1</button>
+            <button><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

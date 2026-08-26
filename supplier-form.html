@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Novo Fornecedor • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <div class="nav-item active"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></div>
+      <a class="nav-item" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Novo Fornecedor</div>
+        <div class="topbar-subtitle">Cadastro de fornecedor de água e gás</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="breadcrumb"><a href="suppliers.html">Fornecedores</a> / Novo Fornecedor</div>
+
+      <div class="page-header">
+        <div>
+          <h1>Novo Fornecedor</h1>
+          <p>Preencha os dados abaixo para cadastrar um novo fornecedor</p>
+        </div>
+        <div class="flex items-center gap-12">
+          <a href="suppliers.html" class="btn btn-outline">Cancelar</a>
+          <a href="suppliers.html" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Salvar Fornecedor</a>
+        </div>
+      </div>
+
+      <form onsubmit="return false;">
+
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-header">
+            <div>
+              <h3>Dados do Fornecedor</h3>
+              <p>Informações principais e de contato</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Razão Social</label>
+                <input type="text" class="form-control" value="Distribuidora Águas do Vale Ltda">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Nome Fantasia</label>
+                <input type="text" class="form-control" value="Águas do Vale">
+              </div>
+            </div>
+
+            <div class="form-row cols-3">
+              <div class="form-group">
+                <label class="form-label">CNPJ</label>
+                <input type="text" class="form-control" value="12.345.678/0001-90" placeholder="00.000.000/0000-00">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Inscrição Estadual</label>
+                <input type="text" class="form-control" value="123.456.789.112">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Tipo de Fornecimento</label>
+                <select class="form-control">
+                  <option>Água</option>
+                  <option>Gás</option>
+                  <option>Ambos</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row cols-3">
+              <div class="form-group">
+                <label class="form-label">Telefone</label>
+                <input type="text" class="form-control" value="(11) 98765-4321" placeholder="(00) 00000-0000">
+              </div>
+              <div class="form-group">
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-control" value="contato@aguasdovale.com.br">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Website <span class="optional">(opcional)</span></label>
+                <input type="text" class="form-control" value="www.aguasdovale.com.br" placeholder="www.exemplo.com.br">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-header">
+            <div>
+              <h3>Endereço</h3>
+              <p>Localização da sede ou centro de distribuição</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-row cols-3">
+              <div class="form-group">
+                <label class="form-label">CEP</label>
+                <input type="text" class="form-control" value="13560-000" placeholder="00000-000">
+              </div>
+              <div class="form-group" style="grid-column: span 2;">
+                <label class="form-label">Endereço / Logradouro</label>
+                <input type="text" class="form-control" value="Rodovia Washington Luís, km 235">
+              </div>
+            </div>
+
+            <div class="form-row cols-3">
+              <div class="form-group">
+                <label class="form-label">Número</label>
+                <input type="text" class="form-control" value="1200">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Complemento <span class="optional">(opcional)</span></label>
+                <input type="text" class="form-control" value="Galpão 3" placeholder="Apto, bloco, sala...">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Bairro</label>
+                <input type="text" class="form-control" value="Distrito Industrial">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Cidade</label>
+                <input type="text" class="form-control" value="São Carlos">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Estado</label>
+                <select class="form-control">
+                  <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                  <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                  <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                  <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                  <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                  <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                  <option selected>SP</option><option>SE</option><option>TO</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Informações Adicionais</h3>
+              <p>Contato responsável e observações internas</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nome do Contato</label>
+                <input type="text" class="form-control" value="Roberto Almeida">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Fornecedor Ativo</label>
+                <div class="flex items-center gap-12" style="height:38px;">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                  <span style="font-size:13px; color:var(--color-text-muted);">Fornecedor disponível para novos pedidos de compra</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group mt-0">
+              <label class="form-label">Observações</label>
+              <textarea class="form-control" rows="4">Fornecedor principal de água mineral 20L e 10L da região de São Carlos. Entrega em até 48h após confirmação do pedido de compra. Pedido mínimo de 200 unidades.</textarea>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Pedidos • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item active" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <a class="nav-item" href="suppliers.html"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></a>
+      <a class="nav-item" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Pedidos</div>
+        <div class="topbar-subtitle">Gerencie todos os pedidos da distribuidora</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-header">
+        <div>
+          <h1>Pedidos</h1>
+          <p>Gerencie todos os pedidos da distribuidora</p>
+        </div>
+        <div class="flex items-center gap-12" style="gap:12px;">
+          <span class="whatsapp-status disconnected"><span class="dot-indicator red"></span> WhatsApp: Desconectado</span>
+          <button class="btn btn-whatsapp" onclick="document.getElementById('whatsappModal').classList.add('active')">
+            <i class="fa-brands fa-whatsapp"></i> Login WhatsApp
+          </button>
+          <a href="#" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Novo Pedido</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="dropdown-filter"><i class="fa-solid fa-filter"></i> Status: Todos <i class="fa-solid fa-chevron-down"></i></div>
+
+          <div class="dropdown-filter"><i class="fa-brands fa-whatsapp"></i> Origem: Todas <i class="fa-solid fa-chevron-down"></i></div>
+
+          <div class="filter-date-range">
+            <span class="filter-date-label">De</span>
+            <input type="date" class="form-control form-control-sm" value="2024-03-01">
+            <span class="filter-date-label">Até</span>
+            <input type="date" class="form-control form-control-sm" value="2024-03-12">
+          </div>
+
+          <div class="dropdown-filter"><i class="fa-solid fa-credit-card"></i> Pagamento: Todos <i class="fa-solid fa-chevron-down"></i></div>
+
+          <div class="topbar-search" style="margin-left:auto; width:280px;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar por cliente ou nº do pedido...">
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Origem</th>
+                <th>Cliente</th>
+                <th>Endereço</th>
+                <th>Itens</th>
+                <th>Total</th>
+                <th>Pagamento</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cell-strong"><a href="order-detail.html" style="color:var(--color-primary);">#1042</a></td>
+                <td><span class="badge badge-purple"><i class="fa-brands fa-whatsapp"></i>WhatsApp</span></td>
+                <td>Maria Aparecida Souza</td>
+                <td class="cell-muted">Rua das Palmeiras, 245 - Jardim Primavera, São Paulo/SP</td>
+                <td class="cell-muted">2x Água 20L</td>
+                <td class="cell-strong">R$ 84,00</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Pix</span></td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-circle"></i>Pendente</span></td>
+                <td>
+                  <div class="flex gap-8">
+                    <a href="order-detail.html" class="btn-icon btn-outline" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn-icon btn-ghost" title="Reimprimir cupom"><i class="fa-solid fa-print"></i></button>
+                    <button class="btn-icon btn-ghost" title="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-strong">#1041</td>
+                <td><span class="badge badge-blue"><i class="fa-solid fa-mobile-screen"></i>App</span></td>
+                <td>João Pedro Lima</td>
+                <td class="cell-muted">Av. Brasil, 1120 - Centro, São Paulo/SP</td>
+                <td class="cell-muted">1x Gás P13</td>
+                <td class="cell-strong">R$ 110,00</td>
+                <td><span class="badge badge-blue"><i class="fa-solid fa-circle"></i>Cartão</span></td>
+                <td><span class="badge badge-purple"><i class="fa-solid fa-circle"></i>Em Rota</span></td>
+                <td>
+                  <div class="flex gap-8">
+                    <a href="order-detail.html" class="btn-icon btn-outline" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn-icon btn-ghost" title="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-strong">#1040</td>
+                <td><span class="badge badge-purple"><i class="fa-brands fa-whatsapp"></i>WhatsApp</span></td>
+                <td>Ana Carolina Ferreira</td>
+                <td class="cell-muted">Rua Voluntários da Pátria, 890 - Vila Maria, São Paulo/SP</td>
+                <td class="cell-muted">3x Água 10L</td>
+                <td class="cell-strong">R$ 96,00</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-circle"></i>Dinheiro</span></td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Entregue</span></td>
+                <td>
+                  <div class="flex gap-8">
+                    <a href="order-detail.html" class="btn-icon btn-outline" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn-icon btn-ghost" title="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-strong">#1039</td>
+                <td><span class="badge badge-blue"><i class="fa-solid fa-mobile-screen"></i>App</span></td>
+                <td>Carlos Eduardo Santos</td>
+                <td class="cell-muted">Rua Marechal Deodoro, 456 - Bela Vista, São Paulo/SP</td>
+                <td class="cell-muted">1x Gás P45</td>
+                <td class="cell-strong">R$ 280,00</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Pix</span></td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Entregue</span></td>
+                <td>
+                  <div class="flex gap-8">
+                    <a href="order-detail.html" class="btn-icon btn-outline" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn-icon btn-ghost" title="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-strong">#1038</td>
+                <td><span class="badge badge-purple"><i class="fa-brands fa-whatsapp"></i>WhatsApp</span></td>
+                <td>Fernanda Oliveira</td>
+                <td class="cell-muted">Rua Tamandaré, 300 - Liberdade, São Paulo/SP</td>
+                <td class="cell-muted">2x Água 20L, 1x Gás P13</td>
+                <td class="cell-strong">R$ 194,00</td>
+                <td><span class="badge badge-blue"><i class="fa-solid fa-circle"></i>Cartão</span></td>
+                <td><span class="badge badge-red"><i class="fa-solid fa-circle"></i>Cancelado</span></td>
+                <td>
+                  <div class="flex gap-8">
+                    <a href="order-detail.html" class="btn-icon btn-outline" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn-icon btn-ghost" title="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-strong">#1037</td>
+                <td><span class="badge badge-blue"><i class="fa-solid fa-mobile-screen"></i>App</span></td>
+                <td>Roberto Carlos Mendes</td>
+                <td class="cell-muted">Rua dos Andradas, 78 - Santana, São Paulo/SP</td>
+                <td class="cell-muted">1x Água 20L, 1x Gás P13</td>
+                <td class="cell-strong">R$ 152,00</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Pix</span></td>
+                <td><span class="badge badge-purple"><i class="fa-solid fa-circle"></i>Confirmado</span></td>
+                <td>
+                  <div class="flex gap-8">
+                    <a href="order-detail.html" class="btn-icon btn-outline" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn-icon btn-ghost" title="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-strong">#1036</td>
+                <td><span class="badge badge-purple"><i class="fa-brands fa-whatsapp"></i>WhatsApp</span></td>
+                <td>Juliana Pereira Alves</td>
+                <td class="cell-muted">Av. Paulista, 1578 - Bela Vista, São Paulo/SP</td>
+                <td class="cell-muted">4x Água 10L</td>
+                <td class="cell-strong">R$ 128,00</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-circle"></i>Dinheiro</span></td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-circle"></i>Pendente</span></td>
+                <td>
+                  <div class="flex gap-8">
+                    <a href="order-detail.html" class="btn-icon btn-outline" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn-icon btn-ghost" title="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-strong">#1035</td>
+                <td><span class="badge badge-blue"><i class="fa-solid fa-mobile-screen"></i>App</span></td>
+                <td>Bruno Henrique Costa</td>
+                <td class="cell-muted">Rua Augusta, 2210 - Consolação, São Paulo/SP</td>
+                <td class="cell-muted">1x Gás P13, 2x Água 20L</td>
+                <td class="cell-strong">R$ 194,00</td>
+                <td><span class="badge badge-blue"><i class="fa-solid fa-circle"></i>Cartão</span></td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Entregue</span></td>
+                <td>
+                  <div class="flex gap-8">
+                    <a href="order-detail.html" class="btn-icon btn-outline" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn-icon btn-ghost" title="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-strong">#1034</td>
+                <td><span class="badge badge-purple"><i class="fa-brands fa-whatsapp"></i>WhatsApp</span></td>
+                <td>Patrícia Gomes Ribeiro</td>
+                <td class="cell-muted">Rua Vergueiro, 987 - Paraíso, São Paulo/SP</td>
+                <td class="cell-muted">2x Água 20L</td>
+                <td class="cell-strong">R$ 84,00</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Pix</span></td>
+                <td><span class="badge badge-red"><i class="fa-solid fa-circle"></i>Cancelado</span></td>
+                <td>
+                  <div class="flex gap-8">
+                    <a href="order-detail.html" class="btn-icon btn-outline" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn-icon btn-ghost" title="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-strong">#1033</td>
+                <td><span class="badge badge-blue"><i class="fa-solid fa-mobile-screen"></i>App</span></td>
+                <td>Marcelo Augusto Dias</td>
+                <td class="cell-muted">Rua Domingos de Morais, 650 - Vila Mariana, São Paulo/SP</td>
+                <td class="cell-muted">1x Gás P45, 1x Água 10L</td>
+                <td class="cell-strong">R$ 312,00</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-circle"></i>Dinheiro</span></td>
+                <td><span class="badge badge-purple"><i class="fa-solid fa-circle"></i>Em Rota</span></td>
+                <td>
+                  <div class="flex gap-8">
+                    <a href="order-detail.html" class="btn-icon btn-outline" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn-icon btn-ghost" title="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer">
+          <div>Mostrando 1-10 de 48 pedidos</div>
+          <div class="pagination">
+            <button><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="whatsappModal" onclick="if(event.target===this) this.classList.remove('active')">
+  <div class="modal">
+    <div class="modal-header">
+      <h3><i class="fa-brands fa-whatsapp whatsapp-green"></i> Login WhatsApp de Pedidos</h3>
+      <button class="modal-close" onclick="document.getElementById('whatsappModal').classList.remove('active')"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body">
+      <p>Abra o WhatsApp no celular, toque em <strong>... > Aparelhos conectados > Conectar aparelho</strong> e escaneie o QR code abaixo.</p>
+      <div class="qr-placeholder">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#fff"/>
+          <g fill="#1F2937">
+            <rect x="4" y="4" width="28" height="28"/>
+            <rect x="8" y="8" width="20" height="20" fill="#fff"/>
+            <rect x="12" y="12" width="12" height="12"/>
+            <rect x="68" y="4" width="28" height="28"/>
+            <rect x="72" y="8" width="20" height="20" fill="#fff"/>
+            <rect x="76" y="12" width="12" height="12"/>
+            <rect x="4" y="68" width="28" height="28"/>
+            <rect x="8" y="72" width="20" height="20" fill="#fff"/>
+            <rect x="12" y="76" width="12" height="12"/>
+            <rect x="40" y="4" width="6" height="6"/>
+            <rect x="52" y="4" width="6" height="6"/>
+            <rect x="40" y="16" width="6" height="6"/>
+            <rect x="46" y="22" width="6" height="6"/>
+            <rect x="58" y="16" width="6" height="6"/>
+            <rect x="40" y="28" width="6" height="6"/>
+            <rect x="52" y="28" width="6" height="6"/>
+            <rect x="4" y="40" width="6" height="6"/>
+            <rect x="16" y="40" width="6" height="6"/>
+            <rect x="28" y="40" width="6" height="6"/>
+            <rect x="40" y="40" width="6" height="6"/>
+            <rect x="52" y="40" width="6" height="6"/>
+            <rect x="64" y="40" width="6" height="6"/>
+            <rect x="76" y="40" width="6" height="6"/>
+            <rect x="88" y="40" width="6" height="6"/>
+            <rect x="4" y="52" width="6" height="6"/>
+            <rect x="22" y="52" width="6" height="6"/>
+            <rect x="34" y="52" width="6" height="6"/>
+            <rect x="46" y="52" width="6" height="6"/>
+            <rect x="58" y="52" width="6" height="6"/>
+            <rect x="70" y="52" width="6" height="6"/>
+            <rect x="88" y="52" width="6" height="6"/>
+            <rect x="4" y="64" width="6" height="6"/>
+            <rect x="16" y="64" width="6" height="6"/>
+            <rect x="40" y="64" width="6" height="6"/>
+            <rect x="52" y="64" width="6" height="6"/>
+            <rect x="64" y="64" width="6" height="6"/>
+            <rect x="76" y="64" width="6" height="6"/>
+            <rect x="88" y="64" width="6" height="6"/>
+            <rect x="40" y="76" width="6" height="6"/>
+            <rect x="52" y="76" width="6" height="6"/>
+            <rect x="64" y="76" width="6" height="6"/>
+            <rect x="88" y="76" width="6" height="6"/>
+            <rect x="40" y="88" width="6" height="6"/>
+            <rect x="58" y="88" width="6" height="6"/>
+            <rect x="70" y="88" width="6" height="6"/>
+            <rect x="82" y="88" width="6" height="6"/>
+            <rect x="88" y="82" width="6" height="6"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="document.getElementById('whatsappModal').classList.remove('active')">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

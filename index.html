@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Mapa de Telas • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .hub-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    border-radius: var(--radius-lg);
+    padding: 32px 34px;
+    color: #fff;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hub-hero::before {
+    content: '';
+    position: absolute;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    top: -140px; right: -140px;
+  }
+  .hub-hero::after {
+    content: '';
+    position: absolute;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(245,166,35,0.10);
+    bottom: -90px; left: -60px;
+  }
+  .hub-hero-inner { position: relative; z-index: 1; }
+  .hub-hero h1 { margin: 0 0 8px; font-size: 26px; font-weight: 800; }
+  .hub-hero p { margin: 0; font-size: 14.5px; color: rgba(255,255,255,0.72); max-width: 620px; line-height: 1.55; }
+
+  .hub-section { margin-bottom: 32px; }
+  .hub-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .hub-section-header i {
+    width: 30px; height: 30px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+  }
+  .hub-section-header h2 { margin: 0; font-size: 15px; font-weight: 700; color: var(--color-primary); }
+  .hub-section-header span { margin-left: auto; font-size: 12px; color: var(--color-text-muted); }
+
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .hub-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: all .15s ease;
+    box-shadow: var(--shadow-sm);
+  }
+  .hub-card:hover {
+    border-color: var(--color-primary-light);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .hub-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+  .hub-icon.blue { background: #E8EEF9; color: var(--color-primary); }
+  .hub-icon.gold { background: #FEF3E0; color: var(--color-accent); }
+  .hub-icon.green { background: var(--color-success-bg); color: var(--color-success); }
+  .hub-icon.red { background: var(--color-danger-bg); color: var(--color-danger); }
+  .hub-icon.purple { background: #F1E9FE; color: #7C3AED; }
+  .hub-card-body { flex: 1; min-width: 0; }
+  .hub-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .hub-card-title h3 { margin: 0; font-size: 14px; font-weight: 700; color: var(--color-text); }
+  .hub-card-title i { font-size: 11px; color: var(--color-text-light); }
+  .hub-card p { margin: 0 0 12px; font-size: 12.5px; color: var(--color-text-muted); line-height: 1.45; }
+  .hub-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    color: var(--color-text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .hub-card-meta .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-success); }
+
+  .hub-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    color: var(--color-text-muted);
+    font-size: 12.5px;
+  }
+  .hub-footer strong { color: var(--color-primary); }
+
+  @media (max-width: 1200px) {
+    .hub-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .hub-grid { grid-template-columns: 1fr; }
+    .app-shell { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <a class="nav-item" href="suppliers.html"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></a>
+      <a class="nav-item" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <div class="nav-item active"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></div>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Mapa de Telas</div>
+        <div class="topbar-subtitle">Navegue rapidamente entre todos os protótipos do painel administrativo</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="screenSearch" placeholder="Buscar tela por nome...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="hub-hero">
+        <div class="hub-hero-inner">
+          <h1>Mapa de Telas do Admin</h1>
+          <p>Índice navegável com todos os mockups do painel Vini Água e Gás. Use os grupos abaixo para localizar rapidamente a tela que deseja revisar ou apresentar.</p>
+        </div>
+      </div>
+
+      <!-- Autenticação -->
+      <section class="hub-section" data-group="Autenticação">
+        <div class="hub-section-header">
+          <i class="fa-solid fa-lock" style="background:#E8EEF9; color:var(--color-primary);"></i>
+          <h2>Autenticação</h2>
+          <span>1 tela</span>
+        </div>
+        <div class="hub-grid">
+          <a class="hub-card" href="login.html">
+            <div class="hub-icon blue"><i class="fa-solid fa-right-to-bracket"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Login</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Tela de autenticação do administrador com e-mail, senha e destaques do sistema.</p>
+              <div class="hub-card-meta"><span class="dot"></span> login.html</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Dashboard -->
+      <section class="hub-section" data-group="Dashboard">
+        <div class="hub-section-header">
+          <i class="fa-solid fa-chart-line" style="background:#E8EEF9; color:var(--color-primary);"></i>
+          <h2>Dashboard</h2>
+          <span>1 tela</span>
+        </div>
+        <div class="hub-grid">
+          <a class="hub-card" href="dashboard.html">
+            <div class="hub-icon blue"><i class="fa-solid fa-gauge-high"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Dashboard</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Visão geral do dia com KPIs, pedidos recentes, mapa de entregas e alertas.</p>
+              <div class="hub-card-meta"><span class="dot"></span> dashboard.html</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Operação -->
+      <section class="hub-section" data-group="Operação">
+        <div class="hub-section-header">
+          <i class="fa-solid fa-clipboard-list" style="background:#FEF3E0; color:var(--color-accent);"></i>
+          <h2>Operação</h2>
+          <span>9 telas</span>
+        </div>
+        <div class="hub-grid">
+          <a class="hub-card" href="orders.html">
+            <div class="hub-icon gold"><i class="fa-solid fa-clipboard-list"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Pedidos</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Listagem completa de pedidos com filtros, status e ações em massa.</p>
+              <div class="hub-card-meta"><span class="dot"></span> orders.html</div>
+            </div>
+          </a>
+          <a class="hub-card" href="order-detail.html">
+            <div class="hub-icon gold"><i class="fa-solid fa-file-invoice"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Detalhe do Pedido</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Visualização detalhada de um pedido, timeline e opções de entrega.</p>
+              <div class="hub-card-meta"><span class="dot"></span> order-detail.html</div>
+            </div>
+          </a>
+          <a class="hub-card" href="products.html">
+            <div class="hub-icon gold"><i class="fa-solid fa-bottle-water"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Produtos</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Catálogo de produtos com preços, estoque e status de ativação.</p>
+              <div class="hub-card-meta"><span class="dot"></span> products.html</div>
+            </div>
+          </a>
+          <a class="hub-card" href="product-form.html">
+            <div class="hub-icon gold"><i class="fa-solid fa-pen-to-square"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Cadastro de Produto</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Formulário de criação e edição de produtos, imagem e categorias.</p>
+              <div class="hub-card-meta"><span class="dot"></span> product-form.html</div>
+            </div>
+          </a>
+          <a class="hub-card" href="inventory.html">
+            <div class="hub-icon gold"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Estoque</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Controle de saldos, níveis críticos e histórico de movimentações.</p>
+              <div class="hub-card-meta"><span class="dot"></span> inventory.html</div>
+            </div>
+          </a>
+          <a class="hub-card" href="inventory-movement.html">
+            <div class="hub-icon gold"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Movimentação de Estoque</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Registro de entrada, saída e ajuste de estoque com justificativa.</p>
+              <div class="hub-card-meta"><span class="dot"></span> inventory-movement.html</div>
+            </div>
+          </a>
+          <a class="hub-card" href="suppliers.html">
+            <div class="hub-icon gold"><i class="fa-solid fa-truck-field"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Fornecedores</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Lista de fornecedores, contatos e produtos vinculados.</p>
+              <div class="hub-card-meta"><span class="dot"></span> suppliers.html</div>
+            </div>
+          </a>
+          <a class="hub-card" href="supplier-form.html">
+            <div class="hub-icon gold"><i class="fa-solid fa-user-plus"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Cadastro de Fornecedor</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Formulário de criação e edição de fornecedores e dados fiscais.</p>
+              <div class="hub-card-meta"><span class="dot"></span> supplier-form.html</div>
+            </div>
+          </a>
+          <a class="hub-card" href="customers.html">
+            <div class="hub-icon gold"><i class="fa-solid fa-users"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Clientes</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Base de clientes com busca, endereços e resumo de fidelidade.</p>
+              <div class="hub-card-meta"><span class="dot"></span> customers.html</div>
+            </div>
+          </a>
+          <a class="hub-card" href="customer-detail.html">
+            <div class="hub-icon gold"><i class="fa-solid fa-id-card"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Detalhe do Cliente</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Ficha completa do cliente, histórico de pedidos e pontos de fidelidade.</p>
+              <div class="hub-card-meta"><span class="dot"></span> customer-detail.html</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Financeiro -->
+      <section class="hub-section" data-group="Financeiro">
+        <div class="hub-section-header">
+          <i class="fa-solid fa-cash-register" style="background:var(--color-success-bg); color:var(--color-success);"></i>
+          <h2>Financeiro</h2>
+          <span>3 telas</span>
+        </div>
+        <div class="hub-grid">
+          <a class="hub-card" href="cash-reconciliation.html">
+            <div class="hub-icon green"><i class="fa-solid fa-cash-register"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Fechamento de Caixa</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Conciliação diária de Pix, cartão, dinheiro e conferência de valores.</p>
+              <div class="hub-card-meta"><span class="dot"></span> cash-reconciliation.html</div>
+            </div>
+          </a>
+          <a class="hub-card" href="cash-history.html">
+            <div class="hub-icon green"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Histórico de Caixa</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Registro de fechamentos anteriores, responsáveis e valores.</p>
+              <div class="hub-card-meta"><span class="dot"></span> cash-history.html</div>
+            </div>
+          </a>
+          <a class="hub-card" href="loyalty-config.html">
+            <div class="hub-icon green"><i class="fa-solid fa-award"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Configuração de Fidelidade</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Regras de pontos, recompensas e resgate do programa de fidelidade.</p>
+              <div class="hub-card-meta"><span class="dot"></span> loyalty-config.html</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Sistema -->
+      <section class="hub-section" data-group="Sistema">
+        <div class="hub-section-header">
+          <i class="fa-solid fa-gear" style="background:#F1E9FE; color:#7C3AED;"></i>
+          <h2>Sistema</h2>
+          <span>1 tela</span>
+        </div>
+        <div class="hub-grid">
+          <a class="hub-card" href="reports.html">
+            <div class="hub-icon purple"><i class="fa-solid fa-file-chart-column"></i></div>
+            <div class="hub-card-body">
+              <div class="hub-card-title"><h3>Relatórios</h3><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+              <p>Relatórios de vendas, estoque, clientes e exportação de dados.</p>
+              <div class="hub-card-meta"><span class="dot"></span> reports.html</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <div class="hub-footer">
+        <div><strong>Vini Água e Gás</strong> — Painel Administrativo v1.0.0</div>
+        <div>15 telas disponíveis</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+  // Busca rápida por nome de tela ou arquivo
+  const searchInput = document.getElementById('screenSearch');
+  const sections = document.querySelectorAll('.hub-section');
+
+  searchInput.addEventListener('input', (e) => {
+    const term = e.target.value.trim().toLowerCase();
+    sections.forEach(section => {
+      const cards = section.querySelectorAll('.hub-card');
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const match = text.includes(term);
+        card.style.display = match ? 'flex' : 'none';
+        if (match) visibleCount++;
+      });
+      section.style.display = visibleCount > 0 ? 'block' : 'none';
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Pedido #1042 • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item active" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <a class="nav-item" href="suppliers.html"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></a>
+      <a class="nav-item" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Pedido #1042</div>
+        <div class="topbar-subtitle">Detalhes completos do pedido</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="breadcrumb"><a href="orders.html">Pedidos</a> / Pedido #1042</div>
+
+      <div class="page-header">
+        <div>
+          <div class="flex items-center gap-12" style="margin-bottom:4px;">
+            <h1 style="margin:0;">Pedido #1042</h1>
+            <span class="badge badge-yellow"><i class="fa-solid fa-circle"></i>Pendente</span>
+          </div>
+          <p>Realizado em 12/03/2024 às 09:14 por Maria Aparecida Souza</p>
+        </div>
+        <div class="flex gap-8">
+          <button class="btn btn-success"><i class="fa-solid fa-check"></i> Confirmar</button>
+          <button class="btn btn-primary"><i class="fa-solid fa-truck"></i> Enviar</button>
+          <button class="btn btn-accent"><i class="fa-solid fa-flag-checkered"></i> Entregar</button>
+          <button class="btn btn-danger"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 1.4fr 1fr;">
+
+        <!-- LEFT COLUMN -->
+        <div style="display:flex; flex-direction:column; gap:20px;">
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Linha do Tempo do Pedido</h3>
+                <p>Acompanhe o progresso da entrega</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="timeline">
+                <div class="timeline-item done">
+                  <div class="timeline-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="timeline-content">
+                    <div class="timeline-title">Pedido Recebido</div>
+                    <div class="timeline-time">12/03/2024 às 09:14</div>
+                  </div>
+                </div>
+                <div class="timeline-item done">
+                  <div class="timeline-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="timeline-content">
+                    <div class="timeline-title">Pagamento Confirmado</div>
+                    <div class="timeline-time">12/03/2024 às 09:16</div>
+                  </div>
+                </div>
+                <div class="timeline-item done">
+                  <div class="timeline-icon"><i class="fa-solid fa-check"></i></div>
+                  <div class="timeline-content">
+                    <div class="timeline-title">Em Preparação</div>
+                    <div class="timeline-time">12/03/2024 às 09:25</div>
+                  </div>
+                </div>
+                <div class="timeline-item current">
+                  <div class="timeline-icon"><i class="fa-solid fa-truck"></i></div>
+                  <div class="timeline-content">
+                    <div class="timeline-title">Em Rota de Entrega</div>
+                    <div class="timeline-time">Previsão: 12/03/2024 às 11:00</div>
+                  </div>
+                </div>
+                <div class="timeline-item pending">
+                  <div class="timeline-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+                  <div class="timeline-content">
+                    <div class="timeline-title">Entregue</div>
+                    <div class="timeline-time">Aguardando</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Itens do Pedido</h3>
+                <p>Produtos incluídos nesta compra</p>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Produto</th>
+                    <th>Qtd.</th>
+                    <th>Preço Unit.</th>
+                    <th>Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="cell-strong">Água Mineral 20L</td>
+                    <td class="cell-muted">2</td>
+                    <td class="cell-muted">R$ 12,00</td>
+                    <td class="cell-strong">R$ 24,00</td>
+                  </tr>
+                  <tr>
+                    <td class="cell-strong">Botijão de Gás P13</td>
+                    <td class="cell-muted">1</td>
+                    <td class="cell-muted">R$ 110,00</td>
+                    <td class="cell-strong">R$ 110,00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-body" style="padding-top:16px;">
+              <div style="display:flex; flex-direction:column; gap:8px; max-width:280px; margin-left:auto; font-size:13px;">
+                <div class="flex items-center justify-between">
+                  <span class="cell-muted">Subtotal</span>
+                  <span>R$ 134,00</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="cell-muted">Taxa de Entrega</span>
+                  <span>R$ 5,00</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="cell-muted">Desconto (fidelidade)</span>
+                  <span style="color:var(--color-success);">- R$ 55,00</span>
+                </div>
+                <hr class="divider" style="margin:6px 0;">
+                <div class="flex items-center justify-between" style="font-weight:800; font-size:15px;">
+                  <span>Total</span>
+                  <span>R$ 84,00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Localização de Entrega</h3>
+                <p>Endereço confirmado pelo cliente</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="map-placeholder">
+                <div class="map-pin"><i class="fa-solid fa-location-dot"></i></div>
+              </div>
+              <p style="margin:14px 0 0; font-size:13.5px; color:var(--color-text-muted);">
+                <i class="fa-solid fa-location-dot" style="color:var(--color-text-light); margin-right:6px;"></i>
+                Rua das Palmeiras, 245 - Jardim Primavera, São Paulo/SP - CEP 04120-030
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div style="display:flex; flex-direction:column; gap:20px;">
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Dados do Cliente</h3>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="flex items-center gap-12" style="margin-bottom:16px;">
+                <div class="avatar-lg">MS</div>
+                <div>
+                  <div style="font-weight:700; font-size:15px;">Maria Aparecida Souza</div>
+                  <div style="font-size:12px; color:var(--color-text-muted);">Cliente desde 2022</div>
+                </div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:10px; font-size:13.5px;">
+                <div class="flex items-center gap-8"><i class="fa-solid fa-phone" style="color:var(--color-text-light); width:16px;"></i> (11) 98765-4321</div>
+                <div class="flex items-center gap-8"><i class="fa-solid fa-envelope" style="color:var(--color-text-light); width:16px;"></i> maria.souza@email.com</div>
+                <div class="flex items-center gap-8"><i class="fa-solid fa-id-card" style="color:var(--color-text-light); width:16px;"></i> CPF 123.456.789-00</div>
+              </div>
+              <a href="customer-detail.html" class="btn btn-outline btn-block btn-sm" style="margin-top:16px;">Ver perfil do cliente <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Informações de Pagamento</h3>
+              </div>
+            </div>
+            <div class="card-body" style="display:flex; flex-direction:column; gap:12px;">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-8">
+                  <div class="kpi-icon green" style="width:36px;height:36px;font-size:14px;"><i class="fa-brands fa-pix"></i></div>
+                  <div>
+                    <div style="font-weight:700; font-size:13px;">Pix</div>
+                    <div style="font-size:11.5px; color:var(--color-text-muted);">Chave: (11) 98765-4321</div>
+                  </div>
+                </div>
+                <span class="badge badge-green"><i class="fa-solid fa-circle"></i>Pago</span>
+              </div>
+              <hr class="divider" style="margin:2px 0;">
+              <div class="stat-inline"><i class="fa-regular fa-clock"></i> Pago em <strong>12/03/2024 às 09:16</strong></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3>Observações</h3>
+              </div>
+            </div>
+            <div class="card-body">
+              <p style="margin:0; font-size:13.5px; color:var(--color-text); line-height:1.6;">
+                <i class="fa-regular fa-comment-dots" style="color:var(--color-text-light); margin-right:8px;"></i>
+                "Deixar na portaria, apto 42B. Se ninguém atender, ligar antes de subir."
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

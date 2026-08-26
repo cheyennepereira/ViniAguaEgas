@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Clientes • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <a class="nav-item" href="suppliers.html"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></a>
+      <a class="nav-item active" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Clientes</div>
+        <div class="topbar-subtitle">Visão geral de hoje, terça-feira, 12 de março de 2024</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-header">
+        <div>
+          <h1>Clientes</h1>
+          <p>Gerencie sua base de clientes</p>
+        </div>
+        <button class="btn btn-primary"><i class="fa-solid fa-plus"></i>Novo Cliente</button>
+      </div>
+
+      <div class="grid grid-4" style="margin-bottom:22px;">
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Total de Clientes</span>
+            <div class="kpi-icon blue"><i class="fa-solid fa-users"></i></div>
+          </div>
+          <div class="kpi-value">312</div>
+          <div class="kpi-trend up"><i class="fa-solid fa-arrow-up"></i> 8% <span class="muted">vs. mês anterior</span></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Clientes Ativos (30 dias)</span>
+            <div class="kpi-icon green"><i class="fa-solid fa-user-check"></i></div>
+          </div>
+          <div class="kpi-value">184</div>
+          <div class="kpi-trend"><span class="muted">Fizeram pelo menos 1 pedido</span></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Ticket Médio</span>
+            <div class="kpi-icon yellow"><i class="fa-solid fa-sack-dollar"></i></div>
+          </div>
+          <div class="kpi-value">R$ 97,40</div>
+          <div class="kpi-trend up"><i class="fa-solid fa-arrow-up"></i> 4% <span class="muted">vs. mês anterior</span></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Pontos de Fidelidade Distribuídos</span>
+            <div class="kpi-icon red"><i class="fa-solid fa-star"></i></div>
+          </div>
+          <div class="kpi-value">18.470</div>
+          <div class="kpi-trend"><span class="muted">Acumulado no programa</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="input-icon-wrap" style="width:320px;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="form-control" placeholder="Buscar por nome, telefone ou e-mail...">
+          </div>
+          <div class="dropdown-filter" style="margin-left:auto;">
+            <i class="fa-solid fa-arrow-down-wide-short"></i> Mais pedidos <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Telefone</th>
+                <th>Total de Pedidos</th>
+                <th>Total Gasto</th>
+                <th>Última Compra</th>
+                <th>Pontos de Fidelidade</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm">MA</div>
+                    <div>
+                      <div class="cell-strong">Maria Aparecida Souza</div>
+                      <div class="cell-muted">(11) 98765-4321</div>
+                    </div>
+                  </div>
+                </td>
+                <td>(11) 98765-4321</td>
+                <td class="cell-strong">42</td>
+                <td class="cell-strong">R$ 3.680,00</td>
+                <td>11/03/2024</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-star"></i>860 pts</span></td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <a href="customer-detail.html" class="btn btn-ghost btn-sm btn-icon" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-ghost btn-sm btn-icon" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm">JP</div>
+                    <div>
+                      <div class="cell-strong">João Pedro Lima</div>
+                      <div class="cell-muted">(11) 97654-3210</div>
+                    </div>
+                  </div>
+                </td>
+                <td>(11) 97654-3210</td>
+                <td class="cell-strong">28</td>
+                <td class="cell-strong">R$ 2.240,00</td>
+                <td>10/03/2024</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-star"></i>510 pts</span></td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <a href="customer-detail.html" class="btn btn-ghost btn-sm btn-icon" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-ghost btn-sm btn-icon" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm">AF</div>
+                    <div>
+                      <div class="cell-strong">Ana Carolina Ferreira</div>
+                      <div class="cell-muted">(11) 96543-2109</div>
+                    </div>
+                  </div>
+                </td>
+                <td>(11) 96543-2109</td>
+                <td class="cell-strong">35</td>
+                <td class="cell-strong">R$ 2.890,00</td>
+                <td>09/03/2024</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-star"></i>645 pts</span></td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <a href="customer-detail.html" class="btn btn-ghost btn-sm btn-icon" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-ghost btn-sm btn-icon" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm">CE</div>
+                    <div>
+                      <div class="cell-strong">Carlos Eduardo Santos</div>
+                      <div class="cell-muted">(11) 95432-1098</div>
+                    </div>
+                  </div>
+                </td>
+                <td>(11) 95432-1098</td>
+                <td class="cell-strong">19</td>
+                <td class="cell-strong">R$ 4.120,00</td>
+                <td>08/03/2024</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-star"></i>390 pts</span></td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <a href="customer-detail.html" class="btn btn-ghost btn-sm btn-icon" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-ghost btn-sm btn-icon" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm">FO</div>
+                    <div>
+                      <div class="cell-strong">Fernanda Oliveira</div>
+                      <div class="cell-muted">(11) 94321-0987</div>
+                    </div>
+                  </div>
+                </td>
+                <td>(11) 94321-0987</td>
+                <td class="cell-strong">12</td>
+                <td class="cell-strong">R$ 980,00</td>
+                <td>05/03/2024</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-star"></i>210 pts</span></td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <a href="customer-detail.html" class="btn btn-ghost btn-sm btn-icon" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-ghost btn-sm btn-icon" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm">RM</div>
+                    <div>
+                      <div class="cell-strong">Roberto Melo Nascimento</div>
+                      <div class="cell-muted">(11) 93210-9876</div>
+                    </div>
+                  </div>
+                </td>
+                <td>(11) 93210-9876</td>
+                <td class="cell-strong">51</td>
+                <td class="cell-strong">R$ 5.430,00</td>
+                <td>12/03/2024</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-star"></i>1.080 pts</span></td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <a href="customer-detail.html" class="btn btn-ghost btn-sm btn-icon" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-ghost btn-sm btn-icon" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm">PS</div>
+                    <div>
+                      <div class="cell-strong">Patrícia Silva Ramos</div>
+                      <div class="cell-muted">(11) 92109-8765</div>
+                    </div>
+                  </div>
+                </td>
+                <td>(11) 92109-8765</td>
+                <td class="cell-strong">8</td>
+                <td class="cell-strong">R$ 620,00</td>
+                <td>02/03/2024</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-star"></i>124 pts</span></td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <a href="customer-detail.html" class="btn btn-ghost btn-sm btn-icon" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-ghost btn-sm btn-icon" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm">LG</div>
+                    <div>
+                      <div class="cell-strong">Lucas Gabriel Almeida</div>
+                      <div class="cell-muted">(11) 91098-7654</div>
+                    </div>
+                  </div>
+                </td>
+                <td>(11) 91098-7654</td>
+                <td class="cell-strong">23</td>
+                <td class="cell-strong">R$ 1.870,00</td>
+                <td>07/03/2024</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-star"></i>430 pts</span></td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <a href="customer-detail.html" class="btn btn-ghost btn-sm btn-icon" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-ghost btn-sm btn-icon" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm">JM</div>
+                    <div>
+                      <div class="cell-strong">Juliana Martins Costa</div>
+                      <div class="cell-muted">(11) 90987-6543</div>
+                    </div>
+                  </div>
+                </td>
+                <td>(11) 90987-6543</td>
+                <td class="cell-strong">15</td>
+                <td class="cell-strong">R$ 1.230,00</td>
+                <td>06/03/2024</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-star"></i>275 pts</span></td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <a href="customer-detail.html" class="btn btn-ghost btn-sm btn-icon" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-ghost btn-sm btn-icon" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm">RC</div>
+                    <div>
+                      <div class="cell-strong">Rafael Costa Barbosa</div>
+                      <div class="cell-muted">(11) 89876-5432</div>
+                    </div>
+                  </div>
+                </td>
+                <td>(11) 89876-5432</td>
+                <td class="cell-strong">6</td>
+                <td class="cell-strong">R$ 410,00</td>
+                <td>28/02/2024</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-star"></i>82 pts</span></td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <a href="customer-detail.html" class="btn btn-ghost btn-sm btn-icon" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-ghost btn-sm btn-icon" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-12">
+                    <div class="avatar-sm">TS</div>
+                    <div>
+                      <div class="cell-strong">Tatiane Souza Pereira</div>
+                      <div class="cell-muted">(11) 88765-4321</div>
+                    </div>
+                  </div>
+                </td>
+                <td>(11) 88765-4321</td>
+                <td class="cell-strong">31</td>
+                <td class="cell-strong">R$ 2.560,00</td>
+                <td>11/03/2024</td>
+                <td><span class="badge badge-yellow"><i class="fa-solid fa-star"></i>598 pts</span></td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <a href="customer-detail.html" class="btn btn-ghost btn-sm btn-icon" title="Ver detalhes"><i class="fa-solid fa-eye"></i></a>
+                    <button class="btn btn-ghost btn-sm btn-icon" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer">
+          <div>Mostrando 1–11 de 312 clientes</div>
+          <div class="pagination">
+            <button><i class="fa-solid fa-angle-left"></i></button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button><i class="fa-solid fa-angle-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

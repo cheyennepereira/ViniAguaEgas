@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Nova Movimentação • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item active" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <a class="nav-item" href="suppliers.html"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></a>
+      <a class="nav-item" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Estoque</div>
+        <div class="topbar-subtitle">Visão geral de hoje, terça-feira, 12 de março de 2024</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="breadcrumb"><a href="inventory.html">Estoque</a> / Nova Movimentação</div>
+
+      <div class="page-header">
+        <div>
+          <h1>Registrar Movimentação de Estoque</h1>
+          <p>Informe os dados da entrada, saída ou ajuste de estoque</p>
+        </div>
+        <div class="flex gap-12">
+          <a href="inventory.html" class="btn btn-outline">Cancelar</a>
+          <button class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i>Salvar Movimentação</button>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 2fr 1fr; align-items:start;">
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Detalhes da Movimentação</h3>
+              <p>Preencha as informações abaixo</p>
+            </div>
+          </div>
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="form-label">Tipo de Movimentação</label>
+              <div class="radio-card-group">
+                <label class="radio-card selected" id="cardCompra">
+                  <input type="radio" name="tipoMovimentacao" value="compra" checked>
+                  <span class="radio-card-check"></span>
+                  <span class="radio-card-icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                  <span class="radio-card-label">Compra</span>
+                </label>
+                <label class="radio-card" id="cardAjuste">
+                  <input type="radio" name="tipoMovimentacao" value="ajuste">
+                  <span class="radio-card-check"></span>
+                  <span class="radio-card-icon"><i class="fa-solid fa-sliders"></i></span>
+                  <span class="radio-card-label">Ajuste</span>
+                </label>
+                <label class="radio-card" id="cardPerda">
+                  <input type="radio" name="tipoMovimentacao" value="perda">
+                  <span class="radio-card-check"></span>
+                  <span class="radio-card-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                  <span class="radio-card-label">Perda</span>
+                </label>
+                <label class="radio-card" id="cardDevolucao">
+                  <input type="radio" name="tipoMovimentacao" value="devolucao">
+                  <span class="radio-card-check"></span>
+                  <span class="radio-card-icon"><i class="fa-solid fa-rotate-left"></i></span>
+                  <span class="radio-card-label">Devolução</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Produto</label>
+                <select class="form-control">
+                  <option>Água Mineral 20L</option>
+                  <option>Água Mineral 10L</option>
+                  <option>Água com Gás 1,5L</option>
+                  <option>Botijão de Gás P13</option>
+                  <option>Botijão de Gás P45</option>
+                  <option>Botijão de Gás P20</option>
+                  <option>Galão Retornável 20L</option>
+                  <option>Água Mineral 500ml (fardo c/12)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Quantidade</label>
+                <input type="number" class="form-control" placeholder="Ex: 50" value="50">
+                <div class="form-hint">+ entrada / - saída</div>
+              </div>
+            </div>
+
+            <div class="alert alert-info" id="fornecedorAlert">
+              <i class="fa-solid fa-circle-info"></i>
+              <div>Campo obrigatório para movimentações do tipo <strong>Compra</strong></div>
+            </div>
+
+            <div class="form-row" id="compraFields">
+              <div class="form-group">
+                <label class="form-label">Fornecedor</label>
+                <select class="form-control">
+                  <option>Distribuidora Águas do Vale Ltda</option>
+                  <option>Gás Brasil Distribuidora</option>
+                  <option>Fonte Pura Águas Minerais</option>
+                  <option>Copagaz Distribuidora de Gás</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Custo Unitário</label>
+                <div class="input-prefix">
+                  <span>R$</span>
+                  <input type="text" class="form-control" placeholder="0,00" value="9,80">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Data da Movimentação</label>
+                <input type="date" class="form-control" value="2024-03-12">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Responsável</label>
+                <select class="form-control">
+                  <option>Vinícius Costa</option>
+                  <option>Ana Paula Reis</option>
+                  <option>Roberto Almeida</option>
+                  <option>Juliana Martins</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Observações <span class="optional">(opcional)</span></label>
+              <textarea class="form-control" placeholder="Ex: Reposição semanal, nota fiscal 4521"></textarea>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Resumo</h3>
+              <p>Projeção após a movimentação</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="stock-projection">
+              <div class="stock-num">
+                <div class="val">8</div>
+                <div class="lbl">Estoque Atual</div>
+              </div>
+              <i class="fa-solid fa-plus" style="color:var(--color-text-light); font-size:14px;"></i>
+              <div class="stock-num">
+                <div class="val">50</div>
+                <div class="lbl">Qtd. Informada</div>
+              </div>
+              <i class="fa-solid fa-arrow-right"></i>
+              <div class="stock-num new">
+                <div class="val">58</div>
+                <div class="lbl">Novo Estoque</div>
+              </div>
+            </div>
+            <hr class="divider">
+            <div class="stat-inline" style="justify-content:space-between; margin-bottom:10px;">
+              <span>Produto selecionado</span>
+              <strong>Água Mineral 20L</strong>
+            </div>
+            <div class="stat-inline" style="justify-content:space-between; margin-bottom:10px;">
+              <span>Estoque mínimo</span>
+              <strong>30 un</strong>
+            </div>
+            <div class="stat-inline" style="justify-content:space-between;">
+              <span>Situação projetada</span>
+              <span class="badge badge-yellow"><i class="fa-solid fa-circle"></i>Baixo</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+<script>
+  document.querySelectorAll('.radio-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      document.querySelectorAll('.radio-card').forEach(function (c) { c.classList.remove('selected'); });
+      card.classList.add('selected');
+      var input = card.querySelector('input');
+      if (input) input.checked = true;
+      var isCompra = card.id === 'cardCompra';
+      var compraFields = document.getElementById('compraFields');
+      var fornecedorAlert = document.getElementById('fornecedorAlert');
+      if (compraFields) compraFields.style.display = isCompra ? '' : 'none';
+      if (fornecedorAlert) fornecedorAlert.style.display = isCompra ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>

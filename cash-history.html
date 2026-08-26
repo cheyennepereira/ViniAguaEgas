@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Histórico de Caixa • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <a class="nav-item" href="suppliers.html"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></a>
+      <a class="nav-item" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item active" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Histórico de Caixa</div>
+        <div class="topbar-subtitle">Visão geral de hoje, terça-feira, 12 de março de 2024</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-header">
+        <div>
+          <div class="breadcrumb"><a href="dashboard.html">Painel</a> / Financeiro / <a href="cash-reconciliation.html">Caixa</a> / Histórico</div>
+          <h1>Histórico de Caixa</h1>
+          <p>Consulte fechamentos de dias anteriores</p>
+        </div>
+        <a href="cash-reconciliation.html" class="btn btn-outline"><i class="fa-solid fa-cash-register"></i> Fechamento de Hoje</a>
+      </div>
+
+      <div class="card">
+        <div class="table-toolbar">
+          <div class="filter-date-range">
+            <span class="filter-date-label">De</span>
+            <input type="date" class="form-control form-control-sm" value="2024-02-27" style="border:none; padding:0;">
+          </div>
+          <div class="filter-date-range">
+            <span class="filter-date-label">Até</span>
+            <input type="date" class="form-control form-control-sm" value="2024-03-11" style="border:none; padding:0;">
+          </div>
+          <div class="topbar-search" style="margin-left:0; width:260px;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar por responsável...">
+          </div>
+          <button class="btn btn-outline btn-sm"><i class="fa-solid fa-filter"></i> Filtrar</button>
+          <div style="margin-left:auto;">
+            <span class="badge badge-gray">14 fechamentos encontrados</span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Total Dinheiro</th>
+                <th>Total Cartão</th>
+                <th>Total Pix</th>
+                <th>Total Geral</th>
+                <th>Diferença</th>
+                <th>Fechado Por</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cell-strong">11/03/2024</td>
+                <td>R$ 480,00</td>
+                <td>R$ 1.260,00</td>
+                <td>R$ 1.680,00</td>
+                <td class="cell-strong">R$ 3.420,00</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Vinícius Costa</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">10/03/2024</td>
+                <td>R$ 610,00</td>
+                <td>R$ 1.480,00</td>
+                <td>R$ 2.010,00</td>
+                <td class="cell-strong">R$ 4.100,00</td>
+                <td><span style="color:var(--color-danger); font-weight:700;">- R$ 5,00</span></td>
+                <td>Juliana Ribeiro</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">09/03/2024</td>
+                <td>R$ 390,00</td>
+                <td>R$ 980,00</td>
+                <td>R$ 1.540,00</td>
+                <td class="cell-strong">R$ 2.910,00</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Vinícius Costa</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">08/03/2024</td>
+                <td>R$ 545,00</td>
+                <td>R$ 1.320,00</td>
+                <td>R$ 1.875,00</td>
+                <td class="cell-strong">R$ 3.740,00</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Carlos Eduardo</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">07/03/2024</td>
+                <td>R$ 322,50</td>
+                <td>R$ 1.105,00</td>
+                <td>R$ 1.640,00</td>
+                <td class="cell-strong">R$ 3.067,50</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Vinícius Costa</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">06/03/2024</td>
+                <td>R$ 500,00</td>
+                <td>R$ 1.190,00</td>
+                <td>R$ 1.720,00</td>
+                <td class="cell-strong">R$ 3.410,00</td>
+                <td><span style="color:var(--color-danger); font-weight:700;">+ R$ 2,50</span></td>
+                <td>Juliana Ribeiro</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">05/03/2024</td>
+                <td>R$ 275,00</td>
+                <td>R$ 890,00</td>
+                <td>R$ 1.360,00</td>
+                <td class="cell-strong">R$ 2.525,00</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Vinícius Costa</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">04/03/2024</td>
+                <td>R$ 460,00</td>
+                <td>R$ 1.375,00</td>
+                <td>R$ 1.980,00</td>
+                <td class="cell-strong">R$ 3.815,00</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Carlos Eduardo</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">03/03/2024</td>
+                <td>R$ 190,00</td>
+                <td>R$ 640,00</td>
+                <td>R$ 980,00</td>
+                <td class="cell-strong">R$ 1.810,00</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Vinícius Costa</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">02/03/2024</td>
+                <td>R$ 505,00</td>
+                <td>R$ 1.240,00</td>
+                <td>R$ 1.705,00</td>
+                <td class="cell-strong">R$ 3.450,00</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Juliana Ribeiro</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">01/03/2024</td>
+                <td>R$ 415,00</td>
+                <td>R$ 1.080,00</td>
+                <td>R$ 1.590,00</td>
+                <td class="cell-strong">R$ 3.085,00</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Vinícius Costa</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">29/02/2024</td>
+                <td>R$ 350,00</td>
+                <td>R$ 960,00</td>
+                <td>R$ 1.415,00</td>
+                <td class="cell-strong">R$ 2.725,00</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Carlos Eduardo</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">28/02/2024</td>
+                <td>R$ 290,00</td>
+                <td>R$ 815,00</td>
+                <td>R$ 1.230,00</td>
+                <td class="cell-strong">R$ 2.335,00</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Vinícius Costa</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">27/02/2024</td>
+                <td>R$ 530,00</td>
+                <td>R$ 1.410,00</td>
+                <td>R$ 1.860,00</td>
+                <td class="cell-strong">R$ 3.800,00</td>
+                <td><span style="color:var(--color-success); font-weight:700;">R$ 0,00</span></td>
+                <td>Juliana Ribeiro</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Fechado</span></td>
+                <td><button class="btn btn-ghost btn-icon" title="Visualizar"><i class="fa-solid fa-eye"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-footer">
+          <span>Mostrando 1–14 de 14 fechamentos</span>
+          <div class="pagination">
+            <button><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="active">1</button>
+            <button><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

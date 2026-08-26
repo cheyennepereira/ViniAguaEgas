@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Estoque • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item active" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <a class="nav-item" href="suppliers.html"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></a>
+      <a class="nav-item" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Estoque</div>
+        <div class="topbar-subtitle">Visão geral de hoje, terça-feira, 12 de março de 2024</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-header">
+        <div>
+          <h1>Estoque</h1>
+          <p>Controle de níveis de estoque e movimentações</p>
+        </div>
+        <a href="inventory-movement.html" class="btn btn-primary"><i class="fa-solid fa-arrow-right-arrow-left"></i>Registrar Movimentação</a>
+      </div>
+
+      <div class="grid grid-4" style="margin-bottom:22px;">
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Total de Produtos</span>
+            <div class="kpi-icon blue"><i class="fa-solid fa-boxes-stacked"></i></div>
+          </div>
+          <div class="kpi-value">8</div>
+          <div class="kpi-trend"><span class="muted">Itens ativos no catálogo</span></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Itens em Estoque Crítico</span>
+            <div class="kpi-icon red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          </div>
+          <div class="kpi-value">2</div>
+          <div class="kpi-trend down"><i class="fa-solid fa-arrow-down"></i> abaixo do estoque mínimo</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Valor Total em Estoque</span>
+            <div class="kpi-icon green"><i class="fa-solid fa-sack-dollar"></i></div>
+          </div>
+          <div class="kpi-value">R$ 18.640,00</div>
+          <div class="kpi-trend"><span class="muted">Custo estimado dos itens</span></div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <span class="kpi-label">Movimentações Hoje</span>
+            <div class="kpi-icon yellow"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+          </div>
+          <div class="kpi-value">6</div>
+          <div class="kpi-trend"><span class="muted">Entradas e saídas registradas</span></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:22px;">
+        <div class="card-header">
+          <div>
+            <h3>Níveis de Estoque Atual</h3>
+            <p>Situação de cada produto em relação ao estoque mínimo</p>
+          </div>
+          <div class="dropdown-filter"><i class="fa-solid fa-filter"></i> Todos os produtos <i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Tipo</th>
+                <th>Estoque Atual</th>
+                <th>Estoque Mínimo</th>
+                <th>Nível</th>
+                <th>Última Atualização</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cell-strong">Água Mineral 20L</td>
+                <td class="cell-muted">Água</td>
+                <td class="cell-strong">8 un</td>
+                <td class="cell-muted">30 un</td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <span class="dot-indicator red"></span>
+                    <div class="progress-bar" style="width:90px;"><div class="progress-bar-fill red" style="width:18%;"></div></div>
+                  </div>
+                </td>
+                <td class="cell-muted">12/03/2024 08:40</td>
+                <td><button class="btn btn-outline btn-icon" title="Registrar movimentação"><i class="fa-solid fa-arrow-right-arrow-left"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">Água Mineral 10L</td>
+                <td class="cell-muted">Água</td>
+                <td class="cell-strong">5 un</td>
+                <td class="cell-muted">25 un</td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <span class="dot-indicator red"></span>
+                    <div class="progress-bar" style="width:90px;"><div class="progress-bar-fill red" style="width:12%;"></div></div>
+                  </div>
+                </td>
+                <td class="cell-muted">12/03/2024 08:40</td>
+                <td><button class="btn btn-outline btn-icon" title="Registrar movimentação"><i class="fa-solid fa-arrow-right-arrow-left"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">Água com Gás 1,5L</td>
+                <td class="cell-muted">Água</td>
+                <td class="cell-strong">142 un</td>
+                <td class="cell-muted">40 un</td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <span class="dot-indicator green"></span>
+                    <div class="progress-bar" style="width:90px;"><div class="progress-bar-fill green" style="width:88%;"></div></div>
+                  </div>
+                </td>
+                <td class="cell-muted">11/03/2024 17:05</td>
+                <td><button class="btn btn-outline btn-icon" title="Registrar movimentação"><i class="fa-solid fa-arrow-right-arrow-left"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">Botijão de Gás P13</td>
+                <td class="cell-muted">Gás</td>
+                <td class="cell-strong">15 un</td>
+                <td class="cell-muted">20 un</td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <span class="dot-indicator yellow"></span>
+                    <div class="progress-bar" style="width:90px;"><div class="progress-bar-fill yellow" style="width:45%;"></div></div>
+                  </div>
+                </td>
+                <td class="cell-muted">12/03/2024 09:15</td>
+                <td><button class="btn btn-outline btn-icon" title="Registrar movimentação"><i class="fa-solid fa-arrow-right-arrow-left"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">Botijão de Gás P45</td>
+                <td class="cell-muted">Gás</td>
+                <td class="cell-strong">22 un</td>
+                <td class="cell-muted">10 un</td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <span class="dot-indicator green"></span>
+                    <div class="progress-bar" style="width:90px;"><div class="progress-bar-fill green" style="width:92%;"></div></div>
+                  </div>
+                </td>
+                <td class="cell-muted">10/03/2024 14:22</td>
+                <td><button class="btn btn-outline btn-icon" title="Registrar movimentação"><i class="fa-solid fa-arrow-right-arrow-left"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">Botijão de Gás P20</td>
+                <td class="cell-muted">Gás</td>
+                <td class="cell-strong">9 un</td>
+                <td class="cell-muted">15 un</td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <span class="dot-indicator yellow"></span>
+                    <div class="progress-bar" style="width:90px;"><div class="progress-bar-fill yellow" style="width:40%;"></div></div>
+                  </div>
+                </td>
+                <td class="cell-muted">11/03/2024 10:50</td>
+                <td><button class="btn btn-outline btn-icon" title="Registrar movimentação"><i class="fa-solid fa-arrow-right-arrow-left"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">Galão Retornável 20L</td>
+                <td class="cell-muted">Vasilhame</td>
+                <td class="cell-strong">76 un</td>
+                <td class="cell-muted">20 un</td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <span class="dot-indicator green"></span>
+                    <div class="progress-bar" style="width:90px;"><div class="progress-bar-fill green" style="width:95%;"></div></div>
+                  </div>
+                </td>
+                <td class="cell-muted">09/03/2024 16:30</td>
+                <td><button class="btn btn-outline btn-icon" title="Registrar movimentação"><i class="fa-solid fa-arrow-right-arrow-left"></i></button></td>
+              </tr>
+              <tr>
+                <td class="cell-strong">Água Mineral 500ml (fardo c/12)</td>
+                <td class="cell-muted">Água</td>
+                <td class="cell-strong">58 fardos</td>
+                <td class="cell-muted">15 fardos</td>
+                <td>
+                  <div class="flex items-center gap-8">
+                    <span class="dot-indicator green"></span>
+                    <div class="progress-bar" style="width:90px;"><div class="progress-bar-fill green" style="width:80%;"></div></div>
+                  </div>
+                </td>
+                <td class="cell-muted">08/03/2024 11:12</td>
+                <td><button class="btn btn-outline btn-icon" title="Registrar movimentação"><i class="fa-solid fa-arrow-right-arrow-left"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3>Movimentações Recentes</h3>
+            <p>Últimas entradas, saídas e ajustes de estoque</p>
+          </div>
+          <a href="#" class="btn btn-ghost btn-sm">Ver histórico completo <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Data/Hora</th>
+                <th>Produto</th>
+                <th>Tipo de Movimentação</th>
+                <th>Quantidade</th>
+                <th>Responsável</th>
+                <th>Observações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cell-muted">12/03/2024 09:15</td>
+                <td class="cell-strong">Botijão de Gás P13</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Compra</span></td>
+                <td style="color:var(--color-success); font-weight:700;">+ 30 un</td>
+                <td>Vinícius Costa</td>
+                <td class="cell-muted">Reposição semanal, nota fiscal 4521</td>
+              </tr>
+              <tr>
+                <td class="cell-muted">12/03/2024 08:40</td>
+                <td class="cell-strong">Água Mineral 20L</td>
+                <td><span class="badge badge-gray"><i class="fa-solid fa-circle"></i>Venda</span></td>
+                <td style="color:var(--color-danger); font-weight:700;">- 12 un</td>
+                <td>Ana Paula Reis</td>
+                <td class="cell-muted">Pedidos #1038 a #1042</td>
+              </tr>
+              <tr>
+                <td class="cell-muted">11/03/2024 17:05</td>
+                <td class="cell-strong">Água com Gás 1,5L</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Compra</span></td>
+                <td style="color:var(--color-success); font-weight:700;">+ 60 un</td>
+                <td>Roberto Almeida</td>
+                <td class="cell-muted">Compra Distribuidora Águas do Vale Ltda</td>
+              </tr>
+              <tr>
+                <td class="cell-muted">11/03/2024 10:50</td>
+                <td class="cell-strong">Botijão de Gás P20</td>
+                <td><span class="badge badge-red"><i class="fa-solid fa-circle"></i>Perda</span></td>
+                <td style="color:var(--color-danger); font-weight:700;">- 2 un</td>
+                <td>Vinícius Costa</td>
+                <td class="cell-muted">Válvula danificada no transporte</td>
+              </tr>
+              <tr>
+                <td class="cell-muted">10/03/2024 14:22</td>
+                <td class="cell-strong">Botijão de Gás P45</td>
+                <td><span class="badge badge-purple"><i class="fa-solid fa-circle"></i>Devolução</span></td>
+                <td style="color:var(--color-success); font-weight:700;">+ 3 un</td>
+                <td>Juliana Martins</td>
+                <td class="cell-muted">Cliente devolveu vasilhame vazio</td>
+              </tr>
+              <tr>
+                <td class="cell-muted">09/03/2024 16:30</td>
+                <td class="cell-strong">Galão Retornável 20L</td>
+                <td><span class="badge badge-blue"><i class="fa-solid fa-circle"></i>Ajuste</span></td>
+                <td style="color:var(--color-success); font-weight:700;">+ 6 un</td>
+                <td>Roberto Almeida</td>
+                <td class="cell-muted">Correção de contagem de inventário</td>
+              </tr>
+              <tr>
+                <td class="cell-muted">08/03/2024 11:12</td>
+                <td class="cell-strong">Água Mineral 500ml (fardo c/12)</td>
+                <td><span class="badge badge-green"><i class="fa-solid fa-circle"></i>Compra</span></td>
+                <td style="color:var(--color-success); font-weight:700;">+ 40 fardos</td>
+                <td>Ana Paula Reis</td>
+                <td class="cell-muted">Compra Gás Brasil Distribuidora, NF 3390</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

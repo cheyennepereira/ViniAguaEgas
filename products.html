@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Produtos • Vini Água e Gás Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><i class="fa-solid fa-droplet"></i></div>
+      <div class="sidebar-brand">Vini Água e Gás<small>Painel Admin</small></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="dashboard.html"><i class="fa-solid fa-chart-line"></i><span class="nav-label">Dashboard</span></a>
+
+      <div class="sidebar-section-title">Operação</div>
+      <a class="nav-item" href="orders.html"><i class="fa-solid fa-clipboard-list"></i><span class="nav-label">Pedidos</span><span class="nav-badge">7</span></a>
+      <a class="nav-item active" href="products.html"><i class="fa-solid fa-bottle-water"></i><span class="nav-label">Produtos</span></a>
+      <a class="nav-item" href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i><span class="nav-label">Estoque</span></a>
+      <a class="nav-item" href="suppliers.html"><i class="fa-solid fa-truck-field"></i><span class="nav-label">Fornecedores</span></a>
+      <a class="nav-item" href="customers.html"><i class="fa-solid fa-users"></i><span class="nav-label">Clientes</span></a>
+
+      <div class="sidebar-section-title">Financeiro</div>
+      <a class="nav-item" href="cash-reconciliation.html"><i class="fa-solid fa-cash-register"></i><span class="nav-label">Caixa</span></a>
+      <a class="nav-item" href="loyalty-config.html"><i class="fa-solid fa-award"></i><span class="nav-label">Fidelidade</span></a>
+      <a class="nav-item" href="reports.html"><i class="fa-solid fa-file-chart-column"></i><span class="nav-label">Relatórios</span></a>
+
+      <div class="sidebar-section-title">Sistema</div>
+      <a class="nav-item" href="index.html"><i class="fa-solid fa-grip"></i><span class="nav-label">Mapa de Telas</span></a>
+      <a class="nav-item" href="login.html"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label">Sair</span></a>
+    </nav>
+    <div class="sidebar-footer">Vini Água e Gás © 2024<br>v1.0.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Produtos</div>
+        <div class="topbar-subtitle">Gerencie o catálogo de água e gás</div>
+      </div>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar pedido, cliente, produto...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></button>
+        <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+        <div class="topbar-user">
+          <div class="avatar">VC</div>
+          <div>
+            <div class="topbar-user-name">Vinícius Costa</div>
+            <div class="topbar-user-role">Administrador</div>
+          </div>
+          <i class="fa-solid fa-chevron-down" style="font-size:11px; color:var(--color-text-light);"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-header">
+        <div>
+          <h1>Produtos</h1>
+          <p>8 produtos cadastrados no catálogo</p>
+        </div>
+        <a href="product-form.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Novo Produto</a>
+      </div>
+
+      <div class="card" style="margin-bottom:22px;">
+        <div class="table-toolbar">
+          <div class="topbar-search" style="margin-left:0; width:280px;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar produto por nome ou SKU...">
+          </div>
+          <div class="dropdown-filter">Tipo: Todos <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="dropdown-filter">Status: Todos <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="view-toggle" style="margin-left:auto;">
+            <button class="view-toggle-btn active" title="Visualização em grade"><i class="fa-solid fa-table-cells-large"></i></button>
+            <button class="view-toggle-btn" title="Visualização em lista"><i class="fa-solid fa-list"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-4" style="margin-bottom:22px;">
+
+        <!-- 1: Água Mineral 20L - low stock -->
+        <div class="card product-card">
+          <div class="product-thumb"><i class="fa-solid fa-bottle-water"></i></div>
+          <div class="card-body">
+            <div class="flex items-center justify-between" style="margin-bottom:8px;">
+              <span class="badge badge-blue">Água</span>
+              <span class="product-price">R$ 42,00</span>
+            </div>
+            <div class="product-name">Água Mineral 20L</div>
+            <div class="stock-line"><span class="dot-indicator red"></span>Estoque: 8 un</div>
+          </div>
+          <div class="product-footer">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="switch-slider"></span>
+            </label>
+            <div class="flex gap-8">
+              <button class="btn btn-ghost btn-icon btn-sm" title="Editar"><i class="fa-solid fa-pen"></i></button>
+              <button class="btn btn-ghost btn-icon btn-sm" title="Excluir"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2: Água Mineral 10L -->
+        <div class="card product-card">
+          <div class="product-thumb"><i class="fa-solid fa-bottle-water"></i></div>
+          <div class="card-body">
+            <div class="flex items-center justify-between" style="margin-bottom:8px;">
+              <span class="badge badge-blue">Água</span>
+              <span class="product-price">R$ 32,00</span>
+            </div>
+            <div class="product-name">Água Mineral 10L</div>
+            <div class="stock-line"><span class="dot-indicator green"></span>Estoque: 46 un</div>
+          </div>
+          <div class="product-footer">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="switch-slider"></span>
+            </label>
+            <div class="flex gap-8">
+              <button class="btn btn-ghost btn-icon btn-sm" title="Editar"><i class="fa-solid fa-pen"></i></button>
+              <button class="btn btn-ghost btn-icon btn-sm" title="Excluir"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3: Água com Gás 1,5L -->
+        <div class="card product-card">
+          <div class="product-thumb"><i class="fa-solid fa-bottle-water"></i></div>
+          <div class="card-body">
+            <div class="flex items-center justify-between" style="margin-bottom:8px;">
+              <span class="badge badge-blue">Água</span>
+              <span class="product-price">R$ 6,50</span>
+            </div>
+            <div class="product-name">Água com Gás 1,5L</div>
+            <div class="stock-line"><span class="dot-indicator green"></span>Estoque: 120 un</div>
+          </div>
+          <div class="product-footer">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="switch-slider"></span>
+            </label>
+            <div class="flex gap-8">
+              <button class="btn btn-ghost btn-icon btn-sm" title="Editar"><i class="fa-solid fa-pen"></i></button>
+              <button class="btn btn-ghost btn-icon btn-sm" title="Excluir"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4: Botijão de Gás P13 - medium stock -->
+        <div class="card product-card">
+          <div class="product-thumb"><i class="fa-solid fa-fire-flame-simple"></i></div>
+          <div class="card-body">
+            <div class="flex items-center justify-between" style="margin-bottom:8px;">
+              <span class="badge badge-yellow">Gás</span>
+              <span class="product-price">R$ 110,00</span>
+            </div>
+            <div class="product-name">Botijão de Gás P13</div>
+            <div class="stock-line"><span class="dot-indicator yellow"></span>Estoque: 15 un</div>
+          </div>
+          <div class="product-footer">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="switch-slider"></span>
+            </label>
+            <div class="flex gap-8">
+              <button class="btn btn-ghost btn-icon btn-sm" title="Editar"><i class="fa-solid fa-pen"></i></button>
+              <button class="btn btn-ghost btn-icon btn-sm" title="Excluir"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5: Botijão de Gás P45 -->
+        <div class="card product-card">
+          <div class="product-thumb"><i class="fa-solid fa-fire-flame-simple"></i></div>
+          <div class="card-body">
+            <div class="flex items-center justify-between" style="margin-bottom:8px;">
+              <span class="badge badge-yellow">Gás</span>
+              <span class="product-price">R$ 280,00</span>
+            </div>
+            <div class="product-name">Botijão de Gás P45</div>
+            <div class="stock-line"><span class="dot-indicator green"></span>Estoque: 22 un</div>
+          </div>
+          <div class="product-footer">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="switch-slider"></span>
+            </label>
+            <div class="flex gap-8">
+              <button class="btn btn-ghost btn-icon btn-sm" title="Editar"><i class="fa-solid fa-pen"></i></button>
+              <button class="btn btn-ghost btn-icon btn-sm" title="Excluir"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6: Botijão de Gás P20 -->
+        <div class="card product-card">
+          <div class="product-thumb"><i class="fa-solid fa-gas-pump"></i></div>
+          <div class="card-body">
+            <div class="flex items-center justify-between" style="margin-bottom:8px;">
+              <span class="badge badge-yellow">Gás</span>
+              <span class="product-price">R$ 145,00</span>
+            </div>
+            <div class="product-name">Botijão de Gás P20</div>
+            <div class="stock-line"><span class="dot-indicator green"></span>Estoque: 18 un</div>
+          </div>
+          <div class="product-footer">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="switch-slider"></span>
+            </label>
+            <div class="flex gap-8">
+              <button class="btn btn-ghost btn-icon btn-sm" title="Editar"><i class="fa-solid fa-pen"></i></button>
+              <button class="btn btn-ghost btn-icon btn-sm" title="Excluir"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7: Galão Retornável 20L -->
+        <div class="card product-card">
+          <div class="product-thumb"><i class="fa-solid fa-bottle-water"></i></div>
+          <div class="card-body">
+            <div class="flex items-center justify-between" style="margin-bottom:8px;">
+              <span class="badge badge-blue">Água</span>
+              <span class="product-price">R$ 15,00</span>
+            </div>
+            <div class="product-name">Galão Retornável 20L</div>
+            <div class="stock-line"><span class="dot-indicator green"></span>Estoque: 60 un</div>
+          </div>
+          <div class="product-footer">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="switch-slider"></span>
+            </label>
+            <div class="flex gap-8">
+              <button class="btn btn-ghost btn-icon btn-sm" title="Editar"><i class="fa-solid fa-pen"></i></button>
+              <button class="btn btn-ghost btn-icon btn-sm" title="Excluir"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8: Água Mineral 500ml (fardo) -->
+        <div class="card product-card">
+          <div class="product-thumb"><i class="fa-solid fa-bottle-water"></i></div>
+          <div class="card-body">
+            <div class="flex items-center justify-between" style="margin-bottom:8px;">
+              <span class="badge badge-blue">Água</span>
+              <span class="product-price">R$ 24,00</span>
+            </div>
+            <div class="product-name">Água Mineral 500ml (fardo)</div>
+            <div class="stock-line"><span class="dot-indicator green"></span>Estoque: 34 un</div>
+          </div>
+          <div class="product-footer">
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="switch-slider"></span>
+            </label>
+            <div class="flex gap-8">
+              <button class="btn btn-ghost btn-icon btn-sm" title="Editar"><i class="fa-solid fa-pen"></i></button>
+              <button class="btn btn-ghost btn-icon btn-sm" title="Excluir"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <div class="table-footer">
+          <span>Mostrando 1–8 de 8 produtos</span>
+          <div class="pagination">
+            <button><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="active">1</button>
+            <button><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
